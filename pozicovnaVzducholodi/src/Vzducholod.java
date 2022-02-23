@@ -8,6 +8,7 @@ public class Vzducholod {
     private final Konstrukcia konstrukcia;
     private final String nazov;
     private final int nosnost;
+    private Stav stav;
 
     public Vzducholod(int id, Konstrukcia konstrukcia, String nazov, int nosnost) {
 
@@ -15,6 +16,7 @@ public class Vzducholod {
         this.konstrukcia = konstrukcia;
         this.nazov = nazov;
         this.nosnost = nosnost;
+        this.stav = Stav.VOLNA;
     }
 
     public int getId() {
@@ -39,5 +41,9 @@ public class Vzducholod {
 
     public boolean navrat() {
         return false;
+    }
+
+    public Stav getStav() {
+        return this.stav;
     }
 }

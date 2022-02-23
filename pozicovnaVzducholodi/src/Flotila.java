@@ -15,10 +15,21 @@ public class Flotila {
     }
 
     public Vzducholod najdiVzducholod(int pozadovanaNosnost, Konstrukcia pozadovanaKonstrukcia, boolean ibaDostupna) {
+        for (Vzducholod vzducholod : this.flotila) {
+            if (vzducholod.getNosnost() == pozadovanaNosnost && vzducholod.getKonstrukcia() == pozadovanaKonstrukcia && vzducholod.getStav() == Stav.VOLNA) {
+                return vzducholod;
+            }
+        }
         return null;
     }
 
     public Vzducholod najdiVzducholod(int id) {
+        for (Vzducholod vzducholod : this.flotila) {
+            if (vzducholod.getId() == id) {
+                return vzducholod;
+            }
+        }
+
         return null;
     }
 

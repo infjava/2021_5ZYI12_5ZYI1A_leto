@@ -4,4 +4,5 @@
  * @author janik
  */
 public enum Stav {
+    VOLNA
 }
