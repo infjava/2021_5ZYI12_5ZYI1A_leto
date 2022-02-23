@@ -4,4 +4,5 @@
  * @author janik
  */
 public enum Konstrukcia {
+    POLOVYSTUZENA, NEVYSTUZENA, HYBRIDNA, VYSTUZENA
 }

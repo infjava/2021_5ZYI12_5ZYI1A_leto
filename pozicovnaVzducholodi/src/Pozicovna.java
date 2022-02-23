@@ -126,6 +126,21 @@ public class Pozicovna {
     }
 
     public static Pozicovna vytvorTestovaciuPozicovnu() {
-        return new Pozicovna();
+        Pozicovna pozicovna = new Pozicovna();
+        pozicovna.vytvorVzducholod(Konstrukcia.VYSTUZENA, "Imperator Altair", 100);
+        pozicovna.vytvorVzducholod(Konstrukcia.VYSTUZENA, "Imperator Deneb", 85);
+        for (int i = 0; i < 3; i++) {
+            pozicovna.vytvorVzducholod(Konstrukcia.POLOVYSTUZENA, "Rex Antares", 20);
+        }
+        for (int i = 0; i < 5; i++) {
+            pozicovna.vytvorVzducholod(Konstrukcia.NEVYSTUZENA, "Dux Regulus", 5);
+        }
+        pozicovna.vytvorVzducholod(Konstrukcia.HYBRIDNA, "Dominus Alcor", 150);
+        pozicovna.vytvorVzducholod(Konstrukcia.HYBRIDNA, "Dominus Mizar", 100);
+        return pozicovna;
+    }
+
+    private void vytvorVzducholod(Konstrukcia konstrukcia, String nazov, int kapacita) {
+        this.flotila.vytvorVzducholod(konstrukcia, nazov, kapacita);
     }
 }
