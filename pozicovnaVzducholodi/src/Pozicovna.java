@@ -71,7 +71,7 @@ public class Pozicovna {
         int id = this.scanner.nextInt();
 
         Vzducholod vzducholod = this.flotila.najdiVzducholod(id);
-        if (vzducholod != null && vzducholod.navrat()) {
+        if (vzducholod != null && vzducholod.oprava()) {
             System.out.println(vzducholod.toString() + " uspesne vratena!");
         } else {
             System.out.println(String.format("Vzducholod s pozadovanymi vlastnostami sa nepodarilo opravit, lebo %s!",
