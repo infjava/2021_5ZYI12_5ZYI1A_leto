@@ -99,7 +99,30 @@ public class Pozicovna {
     }
 
     public void hlavneMenu() {
-
+        String vstup;
+        do {
+            System.out.println("HLAVNE MENU\n" +
+                    "P - pozicanie vzducholode\n" +
+                    "V - vratenie vzducholode\n" +
+                    "O - oprava vzducholode\n" +
+                    "F - vypis flotily\n" +
+                    "K - koniec");
+            vstup = this.scanner.nextLine();
+            switch (vstup) {
+                case "P":
+                    this.podmenuPozicanieVzducholode();
+                    break;
+                case "V":
+                    this.podmenuVratenieVzducholode();
+                    break;
+                case "O":
+                    this.podmenuOpravaVzducholode();
+                    break;
+                case "F":
+                    this.podmenuVypisFlotily();
+                    break;
+            }
+        } while (!vstup.equals("K"));
     }
 
     public static Pozicovna vytvorTestovaciuPozicovnu() {
