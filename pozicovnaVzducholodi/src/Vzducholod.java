@@ -46,4 +46,12 @@ public class Vzducholod {
     public Stav getStav() {
         return this.stav;
     }
+
+    @Override
+    public String toString() {
+        return "id=" + this.id +
+               ", konstrukcia=" + this.konstrukcia +
+               ", nazov='" + this.nazov + '\'' +
+               ", nosnost=" + this.nosnost;
+    }
 }
