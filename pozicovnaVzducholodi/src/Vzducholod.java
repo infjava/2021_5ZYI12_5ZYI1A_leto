@@ -62,7 +62,13 @@ public class Vzducholod {
     }
 
     public boolean oprava() {
-        return false;
+        if (this.stav == Stav.V_SERVISE) {
+            this.stav = Stav.VOLNA;
+            this.pocetVypoziciek = 0;
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public Stav getStav() {
