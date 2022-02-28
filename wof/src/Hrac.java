@@ -14,10 +14,6 @@ public class Hrac {
         return this.aktualnaMiestnost;
     }
 
-    public void setAktualnaMiestnost(Miestnost aktualnaMiestnost) {
-        this.aktualnaMiestnost = aktualnaMiestnost;
-    }
-
     void posunSa(String smer) {
         Miestnost novaMiestnost = null;
         switch (smer) {
@@ -38,7 +34,7 @@ public class Hrac {
         if (novaMiestnost == null) {
             System.out.println("Tam nie je vychod!");
         } else {
-            this.setAktualnaMiestnost(novaMiestnost);
+            this.aktualnaMiestnost = novaMiestnost;
             this.getAktualnaMiestnost().vypisMiestnost();
         }
     }
