@@ -92,4 +92,18 @@ public class Miestnost {
         }
         System.out.println();
     }
+
+    Miestnost getMiestnostVSmere(String smer) {
+        switch (smer) {
+            case "sever":
+                return this.getSevernyVychod();
+            case "vychod":
+                return this.getVychodnyVychod();
+            case "juh":
+                return this.getJuznyVychod();
+            case "zapad":
+                return this.getZapadnyVychod();
+        }
+        return null;
+    }
 }

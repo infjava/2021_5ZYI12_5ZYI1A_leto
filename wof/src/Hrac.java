@@ -15,21 +15,7 @@ public class Hrac {
     }
 
     void posunSa(String smer) {
-        Miestnost novaMiestnost = null;
-        switch (smer) {
-            case "sever":
-                novaMiestnost = this.getAktualnaMiestnost().getSevernyVychod();
-                break;
-            case "vychod":
-                novaMiestnost = this.getAktualnaMiestnost().getVychodnyVychod();
-                break;
-            case "juh":
-                novaMiestnost = this.getAktualnaMiestnost().getJuznyVychod();
-                break;
-            case "zapad":
-                novaMiestnost = this.getAktualnaMiestnost().getZapadnyVychod();
-                break;
-        }
+        Miestnost novaMiestnost = aktualnaMiestnost.getMiestnostVSmere(smer);
 
         if (novaMiestnost == null) {
             System.out.println("Tam nie je vychod!");
@@ -38,4 +24,5 @@ public class Hrac {
             this.getAktualnaMiestnost().vypisMiestnost();
         }
     }
+
 }
