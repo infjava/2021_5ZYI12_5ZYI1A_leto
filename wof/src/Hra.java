@@ -20,20 +20,22 @@
  
 public class Hra  {
     private final Parser parser;
-    private Miestnost aktualnaMiestnost;
-    
+    private final Hrac hrac;
+
     /**
      * Vytvori a inicializuje hru.
      */
     public Hra() {
-        this.vytvorMiestnosti();
+        Miestnost startovaciaMiestnost = this.vytvorMiestnosti();
         this.parser = new Parser();
+        this.hrac = new Hrac(startovaciaMiestnost);
     }
 
     /**
      * Vytvori mapu hry - miestnosti.
+     * @return startovacia miestnost
      */
-    private void vytvorMiestnosti() {
+    private Miestnost vytvorMiestnosti() {
         // vytvorenie miestnosti
         Miestnost terasa = new Miestnost("terasa - hlavny vstup na fakultu");
         Miestnost aula = new Miestnost("aula");
@@ -48,7 +50,7 @@ public class Hra  {
         labak.nastavVychody(terasa, kancelaria, null, null);
         kancelaria.nastavVychody(null, null, null, labak);
 
-        this.aktualnaMiestnost = terasa;  // startovacia miestnost hry
+        return terasa;  // startovacia miestnost hry
     }
 
     /**
@@ -81,7 +83,7 @@ public class Hra  {
         System.out.println("World of FRI je nova, neuveritelne nudna adventura.");
         System.out.println("Zadaj 'pomoc' ak potrebujes pomoc.");
         System.out.println();
-        this.aktualnaMiestnost.vypisMiestnost();
+        this.hrac.getAktualnaMiestnost().vypisMiestnost();
     }
 
     /**
@@ -147,24 +149,24 @@ public class Hra  {
         Miestnost novaMiestnost = null;
         switch (smer) {
             case "sever":
-                novaMiestnost = this.aktualnaMiestnost.getSevernyVychod();
+                novaMiestnost = this.hrac.getAktualnaMiestnost().getSevernyVychod();
                 break;
             case "vychod":
-                novaMiestnost = this.aktualnaMiestnost.getVychodnyVychod();
+                novaMiestnost = this.hrac.getAktualnaMiestnost().getVychodnyVychod();
                 break;
             case "juh":
-                novaMiestnost = this.aktualnaMiestnost.getJuznyVychod();
+                novaMiestnost = this.hrac.getAktualnaMiestnost().getJuznyVychod();
                 break;
             case "zapad":
-                novaMiestnost = this.aktualnaMiestnost.getZapadnyVychod();
+                novaMiestnost = this.hrac.getAktualnaMiestnost().getZapadnyVychod();
                 break;
         }
 
         if (novaMiestnost == null) {
             System.out.println("Tam nie je vychod!");
         } else {
-            this.aktualnaMiestnost = novaMiestnost;
-            this.aktualnaMiestnost.vypisMiestnost();
+            this.hrac.setAktualnaMiestnost(novaMiestnost);
+            this.hrac.getAktualnaMiestnost().vypisMiestnost();
         }
     }
 
