@@ -11,7 +11,7 @@
  * @version 2012.02.21
  */
 public class Miestnost {
-    private String popisMiestnosti;
+    private final String popisMiestnosti;
     private Miestnost severnyVychod;
     private Miestnost juznyVychod;
     private Miestnost vychodnyVychod;
@@ -73,5 +73,23 @@ public class Miestnost {
 
     public Miestnost getZapadnyVychod() {
         return this.zapadnyVychod;
+    }
+
+    void vypisAktualnuMiestnost() {
+        System.out.println("Teraz si v miestnosti " + this.getPopis());
+        System.out.print("Vychody: ");
+        if (this.getSevernyVychod() != null) {
+            System.out.print("sever ");
+        }
+        if (this.getVychodnyVychod() != null) {
+            System.out.print("vychod ");
+        }
+        if (this.getJuznyVychod() != null) {
+            System.out.print("juh ");
+        }
+        if (this.getZapadnyVychod() != null) {
+            System.out.print("zapad ");
+        }
+        System.out.println();
     }
 }
