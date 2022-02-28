@@ -59,35 +59,19 @@ public class Miestnost {
         return this.popisMiestnosti;
     }
 
-    public Miestnost getSevernyVychod() {
-        return this.severnyVychod;
-    }
-
-    public Miestnost getJuznyVychod() {
-        return this.juznyVychod;
-    }
-
-    public Miestnost getVychodnyVychod() {
-        return this.vychodnyVychod;
-    }
-
-    public Miestnost getZapadnyVychod() {
-        return this.zapadnyVychod;
-    }
-
     void vypisMiestnost() {
         System.out.println("Teraz si v miestnosti " + this.getPopis());
         System.out.print("Vychody: ");
-        if (this.getSevernyVychod() != null) {
+        if (this.severnyVychod != null) {
             System.out.print("sever ");
         }
-        if (this.getVychodnyVychod() != null) {
+        if (this.vychodnyVychod != null) {
             System.out.print("vychod ");
         }
-        if (this.getJuznyVychod() != null) {
+        if (this.juznyVychod != null) {
             System.out.print("juh ");
         }
-        if (this.getZapadnyVychod() != null) {
+        if (this.zapadnyVychod != null) {
             System.out.print("zapad ");
         }
         System.out.println();
@@ -95,10 +79,10 @@ public class Miestnost {
 
     Miestnost getMiestnostVSmere(String smer) {
         return switch (smer) {
-            case "sever" -> this.getSevernyVychod();
-            case "vychod" -> this.getVychodnyVychod();
-            case "juh" -> this.getJuznyVychod();
-            case "zapad" -> this.getZapadnyVychod();
+            case "sever" -> this.severnyVychod;
+            case "vychod" -> this.vychodnyVychod;
+            case "juh" -> this.juznyVychod;
+            case "zapad" -> this.zapadnyVychod;
             default -> null;
         };
     }
