@@ -142,35 +142,10 @@ public class Hra  {
         String smer = prikaz.getParameter();
 
         // Pokus o opustenie aktualnej miestnosti danym vychodom.
-        this.posunHraca(smer);
+        this.hrac.posunSa(smer);
     }
 
-    private void posunHraca(String smer) {
-        Miestnost novaMiestnost = null;
-        switch (smer) {
-            case "sever":
-                novaMiestnost = this.hrac.getAktualnaMiestnost().getSevernyVychod();
-                break;
-            case "vychod":
-                novaMiestnost = this.hrac.getAktualnaMiestnost().getVychodnyVychod();
-                break;
-            case "juh":
-                novaMiestnost = this.hrac.getAktualnaMiestnost().getJuznyVychod();
-                break;
-            case "zapad":
-                novaMiestnost = this.hrac.getAktualnaMiestnost().getZapadnyVychod();
-                break;
-        }
-
-        if (novaMiestnost == null) {
-            System.out.println("Tam nie je vychod!");
-        } else {
-            this.hrac.setAktualnaMiestnost(novaMiestnost);
-            this.hrac.getAktualnaMiestnost().vypisMiestnost();
-        }
-    }
-
-    /** 
+    /**
      * Ukonci hru.
      * Skotroluje cely prikaz a zisti, ci je naozaj koniec hry.
      * Prikaz ukoncenia nema parameter.
