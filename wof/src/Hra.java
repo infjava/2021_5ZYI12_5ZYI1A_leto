@@ -140,6 +140,10 @@ public class Hra  {
         String smer = prikaz.getParameter();
 
         // Pokus o opustenie aktualnej miestnosti danym vychodom.
+        this.posunHraca(smer);
+    }
+
+    private void posunHraca(String smer) {
         Miestnost novaMiestnost = null;
         switch (smer) {
             case "sever":
