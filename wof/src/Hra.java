@@ -81,7 +81,7 @@ public class Hra  {
         System.out.println("World of FRI je nova, neuveritelne nudna adventura.");
         System.out.println("Zadaj 'pomoc' ak potrebujes pomoc.");
         System.out.println();
-        this.aktualnaMiestnost.vypisAktualnuMiestnost();
+        this.aktualnaMiestnost.vypisMiestnost();
     }
 
     /**
@@ -160,7 +160,7 @@ public class Hra  {
             System.out.println("Tam nie je vychod!");
         } else {
             this.aktualnaMiestnost = novaMiestnost;
-            this.aktualnaMiestnost.vypisAktualnuMiestnost();
+            this.aktualnaMiestnost.vypisMiestnost();
         }
     }
 

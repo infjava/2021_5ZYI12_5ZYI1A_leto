@@ -75,7 +75,7 @@ public class Miestnost {
         return this.zapadnyVychod;
     }
 
-    void vypisAktualnuMiestnost() {
+    void vypisMiestnost() {
         System.out.println("Teraz si v miestnosti " + this.getPopis());
         System.out.print("Vychody: ");
         if (this.getSevernyVychod() != null) {
