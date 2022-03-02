@@ -20,4 +20,28 @@ class HracTest {
 
         assertSame(susednaMiestnost, hrac.getAktualnaMiestnost());
     }
+
+    @Test
+    void posunSaNespravne() {
+        Miestnost miestnostHraca = new Miestnost("startovacia miestnost");
+        Miestnost susednaMiestnost = new Miestnost("susedna miestnost");
+        miestnostHraca.nastavVychody(susednaMiestnost, null, null, null);
+        Hrac hrac = new Hrac(miestnostHraca);
+
+        hrac.posunSa("juh");
+
+        assertSame(miestnostHraca, hrac.getAktualnaMiestnost());
+    }
+
+    @Test
+    void posunSaDoChybnehoSmeru() {
+        Miestnost miestnostHraca = new Miestnost("startovacia miestnost");
+        Miestnost susednaMiestnost = new Miestnost("susedna miestnost");
+        miestnostHraca.nastavVychody(susednaMiestnost, null, null, null);
+        Hrac hrac = new Hrac(miestnostHraca);
+
+        hrac.posunSa("chyba");
+
+        assertSame(miestnostHraca, hrac.getAktualnaMiestnost());
+    }
 }
