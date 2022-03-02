@@ -8,6 +8,15 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author janik
  */
 class HracTest {
+    @Test
+    void ziskanieAktualnejMiestnosti() {
+        Miestnost miestnostHraca = new Miestnost("startovacia miestnost");
+        Miestnost susednaMiestnost = new Miestnost("susedna miestnost");
+        miestnostHraca.nastavVychody(susednaMiestnost, null, null, null);
+        Hrac hrac = new Hrac(miestnostHraca);
+
+        assertSame(miestnostHraca, hrac.getAktualnaMiestnost());
+    }
 
     @Test
     void posunSaSpravne() {
