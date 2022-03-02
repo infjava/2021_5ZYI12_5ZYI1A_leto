@@ -1,6 +1,6 @@
 import org.junit.jupiter.api.Test;
 
-import org.junit.jupiter.api.Assertions;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * 28. 2. 2021 - 21:14
@@ -18,6 +18,6 @@ class HracTest {
 
         hrac.posunSa("sever");
 
-        Assertions.assertSame(susednaMiestnost, hrac.getAktualnaMiestnost());
+        assertSame(susednaMiestnost, hrac.getAktualnaMiestnost());
     }
 }
