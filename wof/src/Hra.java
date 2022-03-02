@@ -21,6 +21,7 @@
 public class Hra  {
     private final Parser parser;
     private final Hrac hrac;
+    @SuppressWarnings("FieldCanBeLocal")
     private final Mapa mapa;
 
     /**
