@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -8,49 +9,41 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author janik
  */
 class HracTest {
+    private Miestnost miestnostHraca;
+    private Miestnost susednaMiestnost;
+    private Hrac hrac;
+
+    @BeforeEach
+    void setUp() {
+        this.miestnostHraca = new Miestnost("startovacia miestnost");
+        this.susednaMiestnost = new Miestnost("susedna miestnost");
+        this.miestnostHraca.nastavVychody(this.susednaMiestnost, null, null, null);
+        this.hrac = new Hrac(this.miestnostHraca);
+    }
+
     @Test
     void ziskanieAktualnejMiestnosti() {
-        Miestnost miestnostHraca = new Miestnost("startovacia miestnost");
-        Miestnost susednaMiestnost = new Miestnost("susedna miestnost");
-        miestnostHraca.nastavVychody(susednaMiestnost, null, null, null);
-        Hrac hrac = new Hrac(miestnostHraca);
-
-        assertSame(miestnostHraca, hrac.getAktualnaMiestnost());
+        assertSame(this.miestnostHraca, this.hrac.getAktualnaMiestnost());
     }
 
     @Test
     void posunSaSpravne() {
-        Miestnost miestnostHraca = new Miestnost("startovacia miestnost");
-        Miestnost susednaMiestnost = new Miestnost("susedna miestnost");
-        miestnostHraca.nastavVychody(susednaMiestnost, null, null, null);
-        Hrac hrac = new Hrac(miestnostHraca);
+        this.hrac.posunSa("sever");
 
-        hrac.posunSa("sever");
-
-        assertSame(susednaMiestnost, hrac.getAktualnaMiestnost());
+        assertSame(this.susednaMiestnost, this.hrac.getAktualnaMiestnost());
     }
 
     @Test
     void posunSaNespravne() {
-        Miestnost miestnostHraca = new Miestnost("startovacia miestnost");
-        Miestnost susednaMiestnost = new Miestnost("susedna miestnost");
-        miestnostHraca.nastavVychody(susednaMiestnost, null, null, null);
-        Hrac hrac = new Hrac(miestnostHraca);
+        this.hrac.posunSa("juh");
 
-        hrac.posunSa("juh");
-
-        assertSame(miestnostHraca, hrac.getAktualnaMiestnost());
+        assertSame(this.miestnostHraca, this.hrac.getAktualnaMiestnost());
     }
 
     @Test
     void posunSaDoChybnehoSmeru() {
-        Miestnost miestnostHraca = new Miestnost("startovacia miestnost");
-        Miestnost susednaMiestnost = new Miestnost("susedna miestnost");
-        miestnostHraca.nastavVychody(susednaMiestnost, null, null, null);
-        Hrac hrac = new Hrac(miestnostHraca);
+        this.hrac.posunSa("chyba");
 
-        hrac.posunSa("chyba");
-
-        assertSame(miestnostHraca, hrac.getAktualnaMiestnost());
+        assertSame(this.miestnostHraca, this.hrac.getAktualnaMiestnost());
     }
 }
