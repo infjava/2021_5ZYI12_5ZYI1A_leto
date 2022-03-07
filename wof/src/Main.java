@@ -1,3 +1,25 @@
+/*
+co dokodit:
+- questy
+  - dat pisomku
+  - najst labak
+- npc
+  - vedieme dialog
+  - bojovat
+  - dava questy
+  - obchoduje
+  - priklady:
+    - ucitel
+    - spoluziak
+- itemy
+  - zdvihnut
+  - pouzit
+  - odhodit
+  - predat
+- peniaze
+- dalsie miestnosti
+ */
+
 /**
  * Hlavna trieda hry WoF s metodou main - spustanie v NB
  *
