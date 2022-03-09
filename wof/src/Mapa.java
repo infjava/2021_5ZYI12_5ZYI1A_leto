@@ -27,6 +27,10 @@ public class Mapa {
         // inicializacia miestnosti = nastavenie vychodov
         internaty.nastavVychod("cesta", cesta);
 
+        internaty.vlozPredmet("pero");
+        internaty.vlozPredmet("usbkluc");
+        internaty.vlozPredmet("kluc");
+
         cesta.nastavVychod("internaty", internaty);
         cesta.nastavVychod("telocvicna", telocvicna);
         cesta.nastavVychod("c", c);
