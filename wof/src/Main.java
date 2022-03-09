@@ -12,9 +12,13 @@ co dokodit:
     - ucitel
     - spoluziak
 - itemy
+  - vypisu sa pri vstupe do miestnosti
   - zdvihnut
+    > zdvihni "nazov"
   - pouzit
+    > pouzi "nazov"
   - odhodit
+    > odhod "nazov"
   - predat
 - peniaze
 - dalsie miestnosti
