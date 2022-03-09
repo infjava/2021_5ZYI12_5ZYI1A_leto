@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * 28. 2. 2021 - 21:14
  *
@@ -5,9 +7,11 @@
  */
 public class Hrac {
     private Miestnost aktualnaMiestnost;
+    private final ArrayList<String> inventar;
 
     public Hrac(Miestnost aktualnaMiestnost) {
         this.aktualnaMiestnost = aktualnaMiestnost;
+        this.inventar = new ArrayList<>();
     }
 
     public Miestnost getAktualnaMiestnost() {
@@ -25,4 +29,8 @@ public class Hrac {
         }
     }
 
+    public void zdvihniPredmet(String nazovPredmetu) {
+        this.aktualnaMiestnost.odstranPredmet(nazovPredmetu);
+        this.inventar.add(nazovPredmetu);
+    }
 }

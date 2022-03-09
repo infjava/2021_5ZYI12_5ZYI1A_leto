@@ -67,4 +67,8 @@ public class Miestnost {
     public void vlozPredmet(String nazovPredmetu) {
         this.predmety.add(nazovPredmetu);
     }
+
+    public void odstranPredmet(String nazovPredmetu) {
+        this.predmety.remove(nazovPredmetu);
+    }
 }
