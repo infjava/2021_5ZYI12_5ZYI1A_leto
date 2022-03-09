@@ -30,12 +30,14 @@ public class Hrac {
     }
 
     public void zdvihniPredmet(String nazovPredmetu) {
-        this.aktualnaMiestnost.odstranPredmet(nazovPredmetu);
-        this.inventar.add(nazovPredmetu);
+        if (this.aktualnaMiestnost.odstranPredmet(nazovPredmetu)) {
+            this.inventar.add(nazovPredmetu);
+        }
     }
 
     public void odhodPredmet(String nazovPredmetu) {
-        this.inventar.remove(nazovPredmetu);
-        this.aktualnaMiestnost.vlozPredmet(nazovPredmetu);
+        if (this.inventar.remove(nazovPredmetu)) {
+            this.aktualnaMiestnost.vlozPredmet(nazovPredmetu);
+        }
     }
 }
