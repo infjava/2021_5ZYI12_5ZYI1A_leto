@@ -32,12 +32,16 @@ public class Hrac {
     public void zdvihniPredmet(String nazovPredmetu) {
         if (this.aktualnaMiestnost.odstranPredmet(nazovPredmetu)) {
             this.inventar.add(nazovPredmetu);
+        } else {
+            System.out.println("Taky predmet nevidis");
         }
     }
 
     public void odhodPredmet(String nazovPredmetu) {
         if (this.inventar.remove(nazovPredmetu)) {
             this.aktualnaMiestnost.vlozPredmet(nazovPredmetu);
+        } else {
+            System.out.println("Taky predmet nemas");
         }
     }
 }
