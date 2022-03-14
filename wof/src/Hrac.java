@@ -46,4 +46,13 @@ public class Hrac {
             System.out.println("Taky predmet nemas");
         }
     }
+
+    public void pouziPredmet(String nazovPredmetu) {
+        IPredmet predmet = this.inventar.get(nazovPredmetu);
+        if (predmet != null) {
+            predmet.pouzi();
+        } else {
+            System.out.println("Taky predmet nemas");
+        }
+    }
 }
