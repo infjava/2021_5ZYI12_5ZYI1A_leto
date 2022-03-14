@@ -30,7 +30,7 @@ public class Mapa {
         internaty.vlozPredmet(new Predmet("pero"));
         internaty.vlozPredmet(new Predmet("usbkluc"));
         internaty.vlozPredmet(new Predmet("kluc"));
-        internaty.vlozPredmet(new Predmet("navleky"));
+        internaty.vlozPredmet(new Navleky());
 
         cesta.nastavVychod("internaty", internaty);
         cesta.nastavVychod("telocvicna", telocvicna);
