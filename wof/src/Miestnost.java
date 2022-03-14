@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.TreeMap;
 
@@ -17,7 +16,7 @@ import java.util.TreeMap;
 public class Miestnost {
     private final String popisMiestnosti;
     private final TreeMap<String, Miestnost> vychody;
-    private final HashMap<String, Predmet> predmety;
+    private final HashMap<String, IPredmet> predmety;
 
     /**
      * Vytvori miestnost popis ktorej je v parametrom.
@@ -65,11 +64,11 @@ public class Miestnost {
         return this.vychody.get(smer);
     }
 
-    public void vlozPredmet(Predmet predmet) {
+    public void vlozPredmet(IPredmet predmet) {
         this.predmety.put(predmet.getNazov(), predmet);
     }
 
-    public Predmet odstranPredmet(String nazovPredmetu) {
+    public IPredmet odstranPredmet(String nazovPredmetu) {
         return this.predmety.remove(nazovPredmetu);
     }
 }
