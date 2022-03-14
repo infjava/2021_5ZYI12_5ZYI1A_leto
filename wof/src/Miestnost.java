@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.TreeMap;
 
 /**
@@ -16,7 +17,7 @@ import java.util.TreeMap;
 public class Miestnost {
     private final String popisMiestnosti;
     private final TreeMap<String, Miestnost> vychody;
-    private final ArrayList<String> predmety;
+    private final HashMap<String, Predmet> predmety;
 
     /**
      * Vytvori miestnost popis ktorej je v parametrom.
@@ -28,7 +29,7 @@ public class Miestnost {
     public Miestnost(String popis) {
         this.popisMiestnosti = popis;
         this.vychody = new TreeMap<>();
-        this.predmety = new ArrayList<>();
+        this.predmety = new HashMap<>();
     }
 
     public void nastavVychod(String smer, Miestnost miestnost) {
@@ -53,7 +54,7 @@ public class Miestnost {
         System.out.println();
         if (!this.predmety.isEmpty()) {
             System.out.print("Predmety: ");
-            for (String nazov : this.predmety) {
+            for (String nazov : this.predmety.keySet()) {
                 System.out.printf("%s ", nazov);
             }
             System.out.println();
@@ -64,11 +65,11 @@ public class Miestnost {
         return this.vychody.get(smer);
     }
 
-    public void vlozPredmet(String nazovPredmetu) {
-        this.predmety.add(nazovPredmetu);
+    public void vlozPredmet(Predmet predmet) {
+        this.predmety.put(predmet.getNazov(), predmet);
     }
 
-    public boolean odstranPredmet(String nazovPredmetu) {
+    public Predmet odstranPredmet(String nazovPredmetu) {
         return this.predmety.remove(nazovPredmetu);
     }
 }

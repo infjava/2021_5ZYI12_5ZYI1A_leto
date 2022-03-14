@@ -17,7 +17,7 @@ class HracTest {
     void setUp() {
         this.miestnostHraca = new Miestnost("startovacia miestnost");
         this.susednaMiestnost = new Miestnost("susedna miestnost");
-        this.miestnostHraca.nastavVychody(this.susednaMiestnost, null, null, null);
+        this.miestnostHraca.nastavVychod("sever", this.susednaMiestnost);
         this.hrac = new Hrac(this.miestnostHraca);
     }
 

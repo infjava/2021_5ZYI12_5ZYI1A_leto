@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * 28. 2. 2021 - 21:14
@@ -7,11 +7,11 @@ import java.util.ArrayList;
  */
 public class Hrac {
     private Miestnost aktualnaMiestnost;
-    private final ArrayList<String> inventar;
+    private final HashMap<String, Predmet> inventar;
 
     public Hrac(Miestnost aktualnaMiestnost) {
         this.aktualnaMiestnost = aktualnaMiestnost;
-        this.inventar = new ArrayList<>();
+        this.inventar = new HashMap<>();
     }
 
     public Miestnost getAktualnaMiestnost() {
@@ -30,16 +30,18 @@ public class Hrac {
     }
 
     public void zdvihniPredmet(String nazovPredmetu) {
-        if (this.aktualnaMiestnost.odstranPredmet(nazovPredmetu)) {
-            this.inventar.add(nazovPredmetu);
+        Predmet predmet = this.aktualnaMiestnost.odstranPredmet(nazovPredmetu);
+        if (predmet != null) {
+            this.inventar.put(predmet.getNazov(), predmet);
         } else {
             System.out.println("Taky predmet nevidis");
         }
     }
 
     public void odhodPredmet(String nazovPredmetu) {
-        if (this.inventar.remove(nazovPredmetu)) {
-            this.aktualnaMiestnost.vlozPredmet(nazovPredmetu);
+        Predmet predmet = this.inventar.remove(nazovPredmetu);
+        if (predmet != null) {
+            this.aktualnaMiestnost.vlozPredmet(predmet);
         } else {
             System.out.println("Taky predmet nemas");
         }
