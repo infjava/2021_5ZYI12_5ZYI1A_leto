@@ -1,4 +1,5 @@
 import fri.wof.hra.Hrac;
+import fri.wof.prostredie.IMiestnost;
 import fri.wof.prostredie.Miestnost;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -12,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class HracTest {
     private Miestnost miestnostHraca;
-    private Miestnost susednaMiestnost;
+    private IMiestnost susednaMiestnost;
     private Hrac hrac;
 
     @BeforeEach

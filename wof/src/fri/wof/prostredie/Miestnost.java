@@ -17,9 +17,9 @@ import java.util.TreeMap;
  * @author  lokalizacia: Lubomir Sadlon, Jan Janech
  * @version 2012.02.21
  */
-public class Miestnost {
+public class Miestnost implements IMiestnost {
     private final String popisMiestnosti;
-    private final TreeMap<String, Miestnost> vychody;
+    private final TreeMap<String, IMiestnost> vychody;
     private final HashMap<String, IPredmet> predmety;
 
     /**
@@ -35,7 +35,7 @@ public class Miestnost {
         this.predmety = new HashMap<>();
     }
 
-    public void nastavVychod(String smer, Miestnost miestnost) {
+    public void nastavVychod(String smer, IMiestnost miestnost) {
         if (miestnost != null) {
             this.vychody.put(smer, miestnost);
         }
@@ -48,6 +48,7 @@ public class Miestnost {
         return this.popisMiestnosti;
     }
 
+    @Override
     public void vypisMiestnost() {
         System.out.println("Teraz si v miestnosti " + this.getPopis());
         System.out.print("Vychody: ");
@@ -64,14 +65,17 @@ public class Miestnost {
         }
     }
 
-    public Miestnost getMiestnostVSmere(String smer) {
+    @Override
+    public IMiestnost getMiestnostVSmere(String smer) {
         return this.vychody.get(smer);
     }
 
+    @Override
     public void vlozPredmet(IPredmet predmet) {
         this.predmety.put(predmet.getNazov(), predmet);
     }
 
+    @Override
     public IPredmet odstranPredmet(String nazovPredmetu) {
         return this.predmety.remove(nazovPredmetu);
     }

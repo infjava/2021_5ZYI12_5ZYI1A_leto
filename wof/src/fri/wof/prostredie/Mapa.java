@@ -9,7 +9,7 @@ import fri.wof.predmety.Predmet;
  * @author janik
  */
 public class Mapa {
-    private final Miestnost startovaciaMiestnost;
+    private final IMiestnost startovaciaMiestnost;
 
     /**
      * Vytvori mapu hry - miestnosti.
@@ -74,7 +74,7 @@ public class Mapa {
         this.startovaciaMiestnost = internaty;
     }
 
-    public Miestnost getStartovaciaMiestnost() {
+    public IMiestnost getStartovaciaMiestnost() {
         return this.startovaciaMiestnost;
     }
 }

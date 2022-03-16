@@ -3,8 +3,8 @@ package fri.wof.hra;
 import fri.wof.prikazy.Parser;
 import fri.wof.prikazy.Prikaz;
 import fri.wof.prikazy.VykonavacPrikazov;
+import fri.wof.prostredie.IMiestnost;
 import fri.wof.prostredie.Mapa;
-import fri.wof.prostredie.Miestnost;
 
 /**
  * Trieda fri.wof.hra.Hra je hlavna trieda aplikacie "World of FRI".
@@ -38,7 +38,7 @@ public class Hra  {
      */
     public Hra() {
         this.mapa = new Mapa();
-        Miestnost startovaciaMiestnost = this.mapa.getStartovaciaMiestnost();
+        IMiestnost startovaciaMiestnost = this.mapa.getStartovaciaMiestnost();
         this.vykonavacPrikazov = new VykonavacPrikazov();
         this.parser = new Parser(this.vykonavacPrikazov);
         this.hrac = new Hrac(startovaciaMiestnost);

@@ -1,7 +1,7 @@
 package fri.wof.hra;
 
 import fri.wof.predmety.IPredmet;
-import fri.wof.prostredie.Miestnost;
+import fri.wof.prostredie.IMiestnost;
 
 import java.util.HashMap;
 
@@ -11,20 +11,20 @@ import java.util.HashMap;
  * @author janik
  */
 public class Hrac {
-    private Miestnost aktualnaMiestnost;
+    private IMiestnost aktualnaMiestnost;
     private final HashMap<String, IPredmet> inventar;
 
-    public Hrac(Miestnost aktualnaMiestnost) {
+    public Hrac(IMiestnost aktualnaMiestnost) {
         this.aktualnaMiestnost = aktualnaMiestnost;
         this.inventar = new HashMap<>();
     }
 
-    public Miestnost getAktualnaMiestnost() {
+    public IMiestnost getAktualnaMiestnost() {
         return this.aktualnaMiestnost;
     }
 
     public void posunSa(String smer) {
-        Miestnost novaMiestnost = this.aktualnaMiestnost.getMiestnostVSmere(smer);
+        IMiestnost novaMiestnost = this.aktualnaMiestnost.getMiestnostVSmere(smer);
 
         if (novaMiestnost == null) {
             System.out.println("Tam nie je vychod!");
