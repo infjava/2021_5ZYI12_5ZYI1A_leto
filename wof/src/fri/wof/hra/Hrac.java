@@ -1,6 +1,8 @@
 package fri.wof.hra;
 
 import fri.wof.predmety.IPredmet;
+import fri.wof.predmety.Navleky;
+import fri.wof.prostredie.IKontrolaVstupu;
 import fri.wof.prostredie.IMiestnost;
 
 import java.util.HashMap;
@@ -28,6 +30,8 @@ public class Hrac {
 
         if (novaMiestnost == null) {
             System.out.println("Tam nie je vychod!");
+        } else if (novaMiestnost instanceof IKontrolaVstupu && !((IKontrolaVstupu)novaMiestnost).mozeVstupit(this)) {
+            System.out.println("Nemozes vojst.");
         } else {
             this.aktualnaMiestnost = novaMiestnost;
             this.getAktualnaMiestnost().vypisMiestnost();
@@ -59,5 +63,9 @@ public class Hrac {
         } else {
             System.out.println("Taky predmet nemas");
         }
+    }
+
+    public IPredmet getPredmet(String nazov) {
+        return this.inventar.get(nazov);
     }
 }

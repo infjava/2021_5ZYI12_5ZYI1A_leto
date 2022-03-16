@@ -22,4 +22,8 @@ public class Navleky implements IPredmet {
             this.obute = true;
         }
     }
+
+    public boolean suObute() {
+        return this.obute;
+    }
 }
