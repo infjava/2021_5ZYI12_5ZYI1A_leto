@@ -1,3 +1,5 @@
+package fri.wof.predmety;
+
 public class Predmet implements IPredmet {
     private final String nazov;
 

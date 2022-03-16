@@ -1,3 +1,8 @@
+package fri.wof.hra;
+
+import fri.wof.predmety.IPredmet;
+import fri.wof.prostredie.Miestnost;
+
 import java.util.HashMap;
 
 /**
@@ -18,7 +23,7 @@ public class Hrac {
         return this.aktualnaMiestnost;
     }
 
-    void posunSa(String smer) {
+    public void posunSa(String smer) {
         Miestnost novaMiestnost = this.aktualnaMiestnost.getMiestnostVSmere(smer);
 
         if (novaMiestnost == null) {

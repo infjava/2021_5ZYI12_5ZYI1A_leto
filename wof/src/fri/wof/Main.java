@@ -1,4 +1,4 @@
-/*
+package fri.wof;/*
 co dokodit:
 - questy
   - dat pisomku
@@ -23,6 +23,8 @@ co dokodit:
 - peniaze
 - dalsie miestnosti
  */
+
+import fri.wof.hra.Hra;
 
 /**
  * Hlavna trieda hry WoF s metodou main - spustanie v NB

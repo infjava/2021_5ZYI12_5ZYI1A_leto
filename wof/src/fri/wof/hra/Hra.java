@@ -1,15 +1,23 @@
+package fri.wof.hra;
+
+import fri.wof.prikazy.Parser;
+import fri.wof.prikazy.Prikaz;
+import fri.wof.prikazy.VykonavacPrikazov;
+import fri.wof.prostredie.Mapa;
+import fri.wof.prostredie.Miestnost;
+
 /**
- * Trieda Hra je hlavna trieda aplikacie "World of FRI".
+ * Trieda fri.wof.hra.Hra je hlavna trieda aplikacie "World of FRI".
  * "World of FRI" je velmi jednoducha textova hra - adventura. 
- * Hrac sa moze prechadzat po niektorych priestoroch - miestnostiach fakulty. 
+ * fri.wof.hra.Hrac sa moze prechadzat po niektorych priestoroch - miestnostiach fakulty.
  * To je v tejto verzii vsetko. Hru treba skutocne zancne rozsirit,
  * aby bola zaujimava.
  * 
- * Ak chcete hrat "World of FRI", vytvorte instanciu triedy Hra (hra) 
+ * Ak chcete hrat "World of FRI", vytvorte instanciu triedy fri.wof.hra.Hra (hra)
  * a poslite jej spravu hraj.
  * 
- * Hra vytvori a inicializuje vsetky potebne objekty:
- * vytvori vsetky miestnosti, vytvori parser a zacne hru. Hra tiez vyhodnocuje
+ * fri.wof.hra.Hra vytvori a inicializuje vsetky potebne objekty:
+ * vytvori vsetky miestnosti, vytvori parser a zacne hru. fri.wof.hra.Hra tiez vyhodnocuje
  * a vykonava prikazy, ktore vrati parser.
  * 
  * @author  Michael Kolling, David J. Barnes

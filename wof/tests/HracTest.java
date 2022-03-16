@@ -1,3 +1,5 @@
+import fri.wof.hra.Hrac;
+import fri.wof.prostredie.Miestnost;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

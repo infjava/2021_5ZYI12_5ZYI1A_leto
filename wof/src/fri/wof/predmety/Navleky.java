@@ -1,3 +1,5 @@
+package fri.wof.predmety;
+
 public class Navleky implements IPredmet {
     private boolean obute;
 
