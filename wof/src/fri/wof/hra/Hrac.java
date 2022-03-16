@@ -30,7 +30,7 @@ public class Hrac {
 
         if (novaMiestnost == null) {
             System.out.println("Tam nie je vychod!");
-        } else if (novaMiestnost instanceof IKontrolaVstupu && !((IKontrolaVstupu)novaMiestnost).mozeVstupit(this)) {
+        } else if (novaMiestnost instanceof IKontrolaVstupu kontrola && !kontrola.mozeVstupit(this)) {
             System.out.println("Nemozes vojst.");
         } else {
             this.aktualnaMiestnost = novaMiestnost;
