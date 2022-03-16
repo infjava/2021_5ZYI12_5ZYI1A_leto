@@ -23,7 +23,7 @@ public class Mapa {
         Miestnost chodba = new Miestnost("chodba - vstupna chodba");
         Miestnost vratnica = new Miestnost("vratnica - tu byva pani vratnicka");
         Miestnost b = new Miestnost("b - temna chodba v budove b");
-        Miestnost b2 = new Miestnost("b2 - ako na dovolenke, pocut sum ... pocitacov");
+        Labak b2 = new Labak(b);
         Miestnost a = new Miestnost("a - chodba plna historickych artefaktov");
         Miestnost c = new Miestnost("c - chodba v podzemi");
         Miestnost a2 = new Miestnost("a2 - kniznica, tu treba byt ticho");
@@ -54,8 +54,6 @@ public class Mapa {
 
         b.nastavVychod("b2", b2);
         b.nastavVychod("chodba", chodba);
-
-        b2.nastavVychod("b", b);
 
         vratnica.nastavVychod("chodba", chodba);
 
