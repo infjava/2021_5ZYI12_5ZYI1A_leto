@@ -19,6 +19,11 @@ public class Vytah extends Miestnost {
         this.vlozPredmet(new OvladacVytahu());
     }
 
+    @Override
+    public String getPopis() {
+        return super.getPopis() + String.format(" - %d. poschodie", this.aktualnePoschodie);
+    }
+
     public void pridajPoschodie(Miestnost poschodie) {
         this.poschodia.add(poschodie);
     }
