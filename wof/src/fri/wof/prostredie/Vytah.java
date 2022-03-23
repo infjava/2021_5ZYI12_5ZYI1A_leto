@@ -1,5 +1,7 @@
 package fri.wof.prostredie;
 
+import fri.wof.predmety.OvladacVytahu;
+
 import java.util.ArrayList;
 
 public class Vytah extends Miestnost {
@@ -13,6 +15,8 @@ public class Vytah extends Miestnost {
         this.poschodia = new ArrayList<Miestnost>();
         this.aktualnePoschodie = 0;
         this.smer = 1;
+
+        this.vlozPredmet(new OvladacVytahu());
     }
 
     public void pridajPoschodie(Miestnost poschodie) {
