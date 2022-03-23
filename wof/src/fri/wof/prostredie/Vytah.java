@@ -1,10 +1,11 @@
 package fri.wof.prostredie;
 
+import fri.wof.hra.Hrac;
 import fri.wof.predmety.OvladacVytahu;
 
 import java.util.ArrayList;
 
-public class Vytah extends Miestnost {
+public class Vytah extends Miestnost implements IKontrolaVstupu {
     private final ArrayList<Miestnost> poschodia;
     private int aktualnePoschodie;
     private int smer;
@@ -46,5 +47,11 @@ public class Vytah extends Miestnost {
         if (this.aktualnePoschodie == 0 || this.aktualnePoschodie == this.poschodia.size() - 1) {
             this.smer = -this.smer;
         }
+    }
+
+    @Override
+    public boolean mozeVstupit(Hrac hrac) {
+        Miestnost moznyVychod = this.poschodia.get(this.aktualnePoschodie);
+        return hrac.getAktualnaMiestnost() == moznyVychod;
     }
 }

@@ -59,6 +59,7 @@ public class Mapa {
         b.nastavVychod("b2", b2);
         b.nastavVychod("chodba", chodba);
         b.nastavVychod("vytah", vytah);
+        b.nastavVychod("poschodie1", poschodie1);
 
         vratnica.nastavVychod("chodba", chodba);
 
