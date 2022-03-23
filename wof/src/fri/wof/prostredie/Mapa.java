@@ -28,6 +28,10 @@ public class Mapa {
         StandardnaMiestnost c = new StandardnaMiestnost("c - chodba v podzemi");
         StandardnaMiestnost a2 = new StandardnaMiestnost("a2 - kniznica, tu treba byt ticho");
         StandardnaMiestnost wc = new StandardnaMiestnost("wc - radsej ani nejdem hovorit, co tu vidim");
+        Vytah vytah = new Vytah("vytah zo socialistickej ery, poriadne sa drz");
+        StandardnaMiestnost poschodie1 = new StandardnaMiestnost("prve poschodie");
+        StandardnaMiestnost poschodie2 = new StandardnaMiestnost("druhe poschodie");
+        StandardnaMiestnost poschodie3 = new StandardnaMiestnost("tretie poschodie");
 
         // inicializacia miestnosti = nastavenie vychodov
         internaty.nastavVychod("cesta", cesta);
@@ -54,6 +58,7 @@ public class Mapa {
 
         b.nastavVychod("b2", b2);
         b.nastavVychod("chodba", chodba);
+        b.nastavVychod("vytah", vytah);
 
         vratnica.nastavVychod("chodba", chodba);
 
@@ -68,6 +73,17 @@ public class Mapa {
 
         c.nastavVychod("a", a);
         c.nastavVychod("cesta", cesta);
+
+        vytah.pridajPoschodie(b);
+        vytah.pridajPoschodie(poschodie1);
+        vytah.pridajPoschodie(poschodie2);
+        vytah.pridajPoschodie(poschodie3);
+
+        poschodie1.nastavVychod("vytah", vytah);
+
+        poschodie2.nastavVychod("vytah", vytah);
+
+        poschodie3.nastavVychod("vytah", vytah);
 
         this.startovaciaMiestnost = internaty;
     }
