@@ -1,6 +1,6 @@
 import fri.wof.hra.Hrac;
 import fri.wof.prostredie.IMiestnost;
-import fri.wof.prostredie.Miestnost;
+import fri.wof.prostredie.StandardnaMiestnost;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -12,14 +12,14 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author janik
  */
 class HracTest {
-    private Miestnost miestnostHraca;
+    private StandardnaMiestnost miestnostHraca;
     private IMiestnost susednaMiestnost;
     private Hrac hrac;
 
     @BeforeEach
     void setUp() {
-        this.miestnostHraca = new Miestnost("startovacia miestnost");
-        this.susednaMiestnost = new Miestnost("susedna miestnost");
+        this.miestnostHraca = new StandardnaMiestnost("startovacia miestnost");
+        this.susednaMiestnost = new StandardnaMiestnost("susedna miestnost");
         this.miestnostHraca.nastavVychod("sever", this.susednaMiestnost);
         this.hrac = new Hrac(this.miestnostHraca);
     }

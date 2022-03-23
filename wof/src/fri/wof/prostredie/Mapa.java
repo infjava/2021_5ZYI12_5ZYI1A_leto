@@ -16,18 +16,18 @@ public class Mapa {
      */
     public Mapa() {
         // vytvorenie miestnosti
-        Miestnost internaty = new Miestnost("internaty - tu som doma");
-        Miestnost cesta = new Miestnost("cesta - hej hou, hej hou, uz ideme ... na fri");
-        Miestnost telocvicna = new Miestnost("telocvicna - divno to tu pachne, niekto sa zabudol osprchovat");
-        Miestnost schody = new Miestnost("schody - uz sa tesim do skoly");
-        Miestnost chodba = new Miestnost("chodba - vstupna chodba");
-        Miestnost vratnica = new Miestnost("vratnica - tu byva pani vratnicka");
-        Miestnost b = new Miestnost("b - temna chodba v budove b");
+        StandardnaMiestnost internaty = new StandardnaMiestnost("internaty - tu som doma");
+        StandardnaMiestnost cesta = new StandardnaMiestnost("cesta - hej hou, hej hou, uz ideme ... na fri");
+        StandardnaMiestnost telocvicna = new StandardnaMiestnost("telocvicna - divno to tu pachne, niekto sa zabudol osprchovat");
+        StandardnaMiestnost schody = new StandardnaMiestnost("schody - uz sa tesim do skoly");
+        StandardnaMiestnost chodba = new StandardnaMiestnost("chodba - vstupna chodba");
+        StandardnaMiestnost vratnica = new StandardnaMiestnost("vratnica - tu byva pani vratnicka");
+        StandardnaMiestnost b = new StandardnaMiestnost("b - temna chodba v budove b");
         Labak b2 = new Labak(b);
-        Miestnost a = new Miestnost("a - chodba plna historickych artefaktov");
-        Miestnost c = new Miestnost("c - chodba v podzemi");
-        Miestnost a2 = new Miestnost("a2 - kniznica, tu treba byt ticho");
-        Miestnost wc = new Miestnost("wc - radsej ani nejdem hovorit, co tu vidim");
+        StandardnaMiestnost a = new StandardnaMiestnost("a - chodba plna historickych artefaktov");
+        StandardnaMiestnost c = new StandardnaMiestnost("c - chodba v podzemi");
+        StandardnaMiestnost a2 = new StandardnaMiestnost("a2 - kniznica, tu treba byt ticho");
+        StandardnaMiestnost wc = new StandardnaMiestnost("wc - radsej ani nejdem hovorit, co tu vidim");
 
         // inicializacia miestnosti = nastavenie vychodov
         internaty.nastavVychod("cesta", cesta);
