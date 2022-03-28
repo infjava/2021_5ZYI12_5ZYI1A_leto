@@ -49,4 +49,7 @@ public class StandardnaMiestnost extends Miestnost {
         return this.vychody.get(smer);
     }
 
+    public void odstranVychod(String nazov) {
+        this.vychody.remove(nazov);
+    }
 }

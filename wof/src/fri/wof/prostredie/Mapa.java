@@ -1,6 +1,7 @@
 package fri.wof.prostredie;
 
 import fri.wof.predmety.Navleky;
+import fri.wof.predmety.PortalGun;
 import fri.wof.predmety.Predmet;
 
 /**
@@ -40,6 +41,8 @@ public class Mapa {
         internaty.vlozPredmet(new Predmet("usbkluc"));
         internaty.vlozPredmet(new Predmet("kluc"));
         internaty.vlozPredmet(new Navleky());
+
+        internaty.vlozPredmet(new PortalGun());
 
         cesta.nastavVychod("internaty", internaty);
         cesta.nastavVychod("telocvicna", telocvicna);
