@@ -15,7 +15,7 @@ import fri.wof.hra.Hrac;
 public class VykonavacPrikazov {
     // konstantne pole nazvov prikazov
     private static final String[] PLATNE_PRIKAZY = {
-        "chod", "ukonci", "pomoc", "zdvihni", "odhod", "pouzi"
+        "chod", "ukonci", "pomoc", "zdvihni", "odhod", "pouzi", "oslov"
     };
 
     /**
@@ -115,9 +115,22 @@ public class VykonavacPrikazov {
             case "pouzi":
                 this.pouziPredmet(prikaz, hrac);
                 return false;
+            case "oslov":
+                this.oslovNpc(prikaz, hrac);
+                return false;
             default:
                 return false;
         }
+    }
+
+    private void oslovNpc(Prikaz prikaz, Hrac hrac) {
+        if (!prikaz.maParameter()) {
+            System.out.println("Koho to chces oslovit?");
+            return;
+        }
+
+        String menoNpc = prikaz.getParameter();
+        hrac.oslovNpc(menoNpc);
     }
 
     private void pouziPredmet(Prikaz prikaz, Hrac hrac) {

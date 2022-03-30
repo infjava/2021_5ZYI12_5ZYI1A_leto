@@ -10,4 +10,8 @@ public class Npc {
     public String getMeno() {
         return this.meno;
     }
+
+    public void oslov() {
+
+    }
 }

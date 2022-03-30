@@ -1,5 +1,6 @@
 package fri.wof.prostredie;
 
+import fri.wof.npc.Npc;
 import fri.wof.predmety.IPredmet;
 
 public interface IMiestnost {
@@ -10,4 +11,6 @@ public interface IMiestnost {
     void vlozPredmet(IPredmet predmet);
 
     IPredmet odstranPredmet(String nazovPredmetu);
+
+    Npc getNpc(String meno);
 }

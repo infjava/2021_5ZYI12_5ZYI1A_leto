@@ -1,5 +1,6 @@
 package fri.wof.hra;
 
+import fri.wof.npc.Npc;
 import fri.wof.predmety.IPredmet;
 import fri.wof.predmety.Navleky;
 import fri.wof.prostredie.IKontrolaVstupu;
@@ -67,5 +68,14 @@ public class Hrac {
 
     public IPredmet getPredmet(String nazov) {
         return this.inventar.get(nazov);
+    }
+
+    public void oslovNpc(String meno) {
+        Npc npc = this.aktualnaMiestnost.getNpc(meno);
+        if (npc != null) {
+            npc.oslov();
+        } else {
+            System.out.printf("Npc %s nikde nevidis!%n", meno);
+        }
     }
 }

@@ -60,6 +60,11 @@ public class Miestnost implements IMiestnost {
         return this.predmety.remove(nazovPredmetu);
     }
 
+    @Override
+    public Npc getNpc(String meno) {
+        return this.npccka.get(meno);
+    }
+
     public void postavNpc(Npc npc) {
         this.npccka.put(npc.getMeno(), npc);
     }
