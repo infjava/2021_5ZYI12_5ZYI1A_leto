@@ -1,5 +1,7 @@
 package fri.wof.prostredie;
 
+import fri.wof.npc.Npc;
+
 import java.util.TreeMap;
 
 /**
@@ -37,11 +39,7 @@ public class StandardnaMiestnost extends Miestnost {
 
     @Override
     public void vypisMozneVychody() {
-        System.out.print("Vychody: ");
-        for (String smer : this.vychody.keySet()) {
-            System.out.printf("%s ", smer);
-        }
-        System.out.println();
+        this.vypisKluce("Vychody", this.vychody.keySet());
     }
 
     @Override

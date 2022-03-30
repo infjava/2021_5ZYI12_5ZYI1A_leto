@@ -1,16 +1,20 @@
 package fri.wof.prostredie;
 
+import fri.wof.npc.Npc;
 import fri.wof.predmety.IPredmet;
 
 import java.util.HashMap;
+import java.util.Set;
 
 public class Miestnost implements IMiestnost {
     private final String popisMiestnosti;
     private final HashMap<String, IPredmet> predmety;
+    private final HashMap<String, Npc> npccka;
 
     public Miestnost(String popis) {
         this.popisMiestnosti = popis;
         this.predmety = new HashMap<>();
+        this.npccka = new HashMap<>();
     }
 
     /**
@@ -24,9 +28,14 @@ public class Miestnost implements IMiestnost {
     public void vypisMiestnost() {
         System.out.println("Teraz si v miestnosti " + this.getPopis());
         this.vypisMozneVychody();
-        if (!this.predmety.isEmpty()) {
-            System.out.print("Predmety: ");
-            for (String nazov : this.predmety.keySet()) {
+        this.vypisKluce("Predmety", this.predmety.keySet());
+        this.vypisKluce("NPC", this.npccka.keySet());
+    }
+
+    protected void vypisKluce(String nadpis, Set<String> kluce) {
+        if (!kluce.isEmpty()) {
+            System.out.printf("%s: ", nadpis);
+            for (String nazov : kluce) {
                 System.out.printf("%s ", nazov);
             }
             System.out.println();
@@ -49,5 +58,9 @@ public class Miestnost implements IMiestnost {
     @Override
     public IPredmet odstranPredmet(String nazovPredmetu) {
         return this.predmety.remove(nazovPredmetu);
+    }
+
+    public void postavNpc(Npc npc) {
+        this.npccka.put(npc.getMeno(), npc);
     }
 }
