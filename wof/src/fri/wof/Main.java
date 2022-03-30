@@ -5,6 +5,57 @@ co dokodit:
   - najst labak
 - npc
   - vedieme dialog
+    > oslov spoluziak
+    Ahoj, bude pisomka
+    1) Viem
+    2) *******, to fakt?
+    3) Aka pisomka?
+    Vyber si: 1
+    A ucil si sa?
+    1) Celu noc
+    2) Jasne, ze nie, to dam
+    3) *******
+    Vyber si: 1
+    Tak to sa nemusis bat
+
+    Ahoj, bude pisomka
+    1) Viem
+    2) *******, to fakt?
+    3) Aka pisomka?
+    Vyber si: 1
+    A ucil si sa?
+    1) Celu noc
+    2) Jasne, ze nie, to dam
+    3) *******
+    Vyber si: 2
+    Tak to sa nemusis bat
+
+    Ahoj, bude pisomka
+    1) Viem
+    2) *******, to fakt?
+    3) Aka pisomka?
+    Vyber si: 1
+    A ucil si sa?
+    1) Celu noc
+    2) Jasne, ze nie, to dam
+    3) *******
+    Vyber si: 3
+    Uprimnu sustrast
+
+    Ahoj, bude pisomka
+    1) Viem
+    2) *******, to fakt?
+    3) Aka pisomka?
+    Vyber si: 2
+    Nie, robim si srandu
+
+    Ahoj, bude pisomka
+    1) Viem
+    2) *******, to fakt?
+    3) Aka pisomka?
+    Vyber si: 3
+    Obhajoba BP. Sach-mat
+
   - bojovat
   - dava questy
   - obchoduje
