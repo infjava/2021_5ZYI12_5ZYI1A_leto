@@ -1,4 +1,4 @@
-package fri.wof.hra;
+package fri.wof.prostredie;
 
 public class NeexistujuciVychodException extends Exception {
 }

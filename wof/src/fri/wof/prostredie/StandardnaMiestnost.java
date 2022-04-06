@@ -43,8 +43,12 @@ public class StandardnaMiestnost extends Miestnost {
     }
 
     @Override
-    public IMiestnost getMiestnostVSmere(String smer) {
-        return this.vychody.get(smer);
+    public IMiestnost getMiestnostVSmere(String smer) throws NeexistujuciVychodException {
+        IMiestnost miestnost = this.vychody.get(smer);
+        if (miestnost == null) {
+            throw new NeexistujuciVychodException();
+        }
+        return miestnost;
     }
 
     public void odstranVychod(String nazov) {

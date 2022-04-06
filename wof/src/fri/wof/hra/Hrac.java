@@ -2,9 +2,9 @@ package fri.wof.hra;
 
 import fri.wof.npc.Npc;
 import fri.wof.predmety.IPredmet;
-import fri.wof.predmety.Navleky;
 import fri.wof.prostredie.IKontrolaVstupu;
 import fri.wof.prostredie.IMiestnost;
+import fri.wof.prostredie.NeexistujuciVychodException;
 
 import java.util.HashMap;
 
@@ -29,9 +29,7 @@ public class Hrac {
     public void posunSa(String smer) throws NeexistujuciVychodException, ZakazVstupuException {
         IMiestnost novaMiestnost = this.aktualnaMiestnost.getMiestnostVSmere(smer);
 
-        if (novaMiestnost == null) {
-            throw new NeexistujuciVychodException();
-        } else if (novaMiestnost instanceof IKontrolaVstupu kontrola && !kontrola.mozeVstupit(this)) {
+        if (novaMiestnost instanceof IKontrolaVstupu kontrola && !kontrola.mozeVstupit(this)) {
             throw new ZakazVstupuException();
         } else {
             this.aktualnaMiestnost = novaMiestnost;

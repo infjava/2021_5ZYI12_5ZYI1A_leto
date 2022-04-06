@@ -46,7 +46,7 @@ public class Miestnost implements IMiestnost {
     }
 
     @Override
-    public IMiestnost getMiestnostVSmere(String smer) {
+    public IMiestnost getMiestnostVSmere(String smer) throws NeexistujuciVychodException {
         return null;
     }
 

@@ -1,7 +1,7 @@
 package fri.wof.prikazy;
 
 import fri.wof.hra.Hrac;
-import fri.wof.hra.NeexistujuciVychodException;
+import fri.wof.prostredie.NeexistujuciVychodException;
 import fri.wof.hra.ZakazVstupuException;
 
 /**

@@ -30,11 +30,11 @@ public class Vytah extends Miestnost implements IKontrolaVstupu {
     }
 
     @Override
-    public IMiestnost getMiestnostVSmere(String smer) {
+    public IMiestnost getMiestnostVSmere(String smer) throws NeexistujuciVychodException {
         if (smer.equals("von")) {
             return this.poschodia.get(this.aktualnePoschodie);
         }
-        return null;
+        throw new NeexistujuciVychodException();
     }
 
     @Override

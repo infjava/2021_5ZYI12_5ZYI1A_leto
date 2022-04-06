@@ -6,7 +6,7 @@ import fri.wof.predmety.IPredmet;
 public interface IMiestnost {
     void vypisMiestnost();
 
-    IMiestnost getMiestnostVSmere(String smer);
+    IMiestnost getMiestnostVSmere(String smer) throws NeexistujuciVychodException;
 
     void vlozPredmet(IPredmet predmet);
 
