@@ -26,13 +26,13 @@ public class Hrac {
         return this.aktualnaMiestnost;
     }
 
-    public void posunSa(String smer) {
+    public void posunSa(String smer) throws NeexistujuciVychodException, ZakazVstupuException {
         IMiestnost novaMiestnost = this.aktualnaMiestnost.getMiestnostVSmere(smer);
 
         if (novaMiestnost == null) {
-            System.out.println("Tam nie je vychod!");
+            throw new NeexistujuciVychodException();
         } else if (novaMiestnost instanceof IKontrolaVstupu kontrola && !kontrola.mozeVstupit(this)) {
-            System.out.println("Nemozes vojst.");
+            throw new ZakazVstupuException();
         } else {
             this.aktualnaMiestnost = novaMiestnost;
             this.getAktualnaMiestnost().vypisMiestnost();

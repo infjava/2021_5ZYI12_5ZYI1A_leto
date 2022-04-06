@@ -1,6 +1,8 @@
 package fri.wof.prikazy;
 
 import fri.wof.hra.Hrac;
+import fri.wof.hra.NeexistujuciVychodException;
+import fri.wof.hra.ZakazVstupuException;
 
 /**
  * Trieda NazvyPrikazov udrzuje zoznam nazvov platnych prikazov hry. 
@@ -68,7 +70,13 @@ public class VykonavacPrikazov {
         String smer = prikaz.getParameter();
 
         // Pokus o opustenie aktualnej miestnosti danym vychodom.
-        hrac.posunSa(smer);
+        try {
+            hrac.posunSa(smer);
+        } catch (NeexistujuciVychodException e) {
+            System.out.println("Tym smerom sa neda ist");
+        } catch (ZakazVstupuException e) {
+            System.out.println("Neda sa vojst");
+        }
     }
 
     /**

@@ -1,4 +1,6 @@
 import fri.wof.hra.Hrac;
+import fri.wof.hra.NeexistujuciVychodException;
+import fri.wof.hra.ZakazVstupuException;
 import fri.wof.prostredie.IMiestnost;
 import fri.wof.prostredie.StandardnaMiestnost;
 import org.junit.jupiter.api.BeforeEach;
@@ -30,7 +32,7 @@ class HracTest {
     }
 
     @Test
-    void posunSaSpravne() {
+    void posunSaSpravne() throws NeexistujuciVychodException, ZakazVstupuException {
         this.hrac.posunSa("sever");
 
         assertSame(this.susednaMiestnost, this.hrac.getAktualnaMiestnost());
@@ -38,14 +40,24 @@ class HracTest {
 
     @Test
     void posunSaNespravne() {
-        this.hrac.posunSa("juh");
+        assertThrows(
+            NeexistujuciVychodException.class,
+            () -> {
+                this.hrac.posunSa("juh");
+            }
+        );
 
         assertSame(this.miestnostHraca, this.hrac.getAktualnaMiestnost());
     }
 
     @Test
     void posunSaDoChybnehoSmeru() {
-        this.hrac.posunSa("chyba");
+        assertThrows(
+                NeexistujuciVychodException.class,
+                () -> {
+                    this.hrac.posunSa("chyba");
+                }
+        );
 
         assertSame(this.miestnostHraca, this.hrac.getAktualnaMiestnost());
     }
