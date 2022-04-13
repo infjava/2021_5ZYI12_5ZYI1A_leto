@@ -3,7 +3,9 @@ package fri.wof.predmety;
 import fri.wof.hra.Hrac;
 import fri.wof.prostredie.StandardnaMiestnost;
 
-public class PortalGun implements IPredmet {
+import java.io.Serializable;
+
+public class PortalGun implements IPredmet, Serializable {
     private static final String[] NAZVY_PORTALOV = { "modry", "cerveny" };
 
     private int indexNasledujucehoPortalu;

@@ -28,7 +28,7 @@ import fri.wof.prostredie.Mapa;
  
 public class Hra  {
     private final Parser parser;
-    private final Hrac hrac;
+    private Hrac hrac;
     @SuppressWarnings("FieldCanBeLocal")
     private final Mapa mapa;
     private final VykonavacPrikazov vykonavacPrikazov;
@@ -59,7 +59,7 @@ public class Hra  {
         
         do {
             Prikaz prikaz = this.parser.nacitajPrikaz();
-            jeKoniec = this.vykonavacPrikazov.vykonajPrikaz(prikaz, this.hrac);
+            jeKoniec = this.vykonavacPrikazov.vykonajPrikaz(prikaz, this.hrac, this);
         } while (!jeKoniec);
         
         System.out.println("Maj sa fajn!");
@@ -77,4 +77,7 @@ public class Hra  {
         this.hrac.getAktualnaMiestnost().vypisMiestnost();
     }
 
+    public void setHrac(Hrac hrac) {
+        this.hrac = hrac;
+    }
 }

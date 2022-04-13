@@ -3,10 +3,11 @@ package fri.wof.prostredie;
 import fri.wof.npc.Npc;
 import fri.wof.predmety.IPredmet;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Set;
 
-public class Miestnost implements IMiestnost {
+public class Miestnost implements IMiestnost, Serializable {
     private final String popisMiestnosti;
     private final HashMap<String, IPredmet> predmety;
     private final HashMap<String, Npc> npccka;

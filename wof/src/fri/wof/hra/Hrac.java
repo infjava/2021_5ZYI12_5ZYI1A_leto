@@ -6,6 +6,7 @@ import fri.wof.prostredie.IKontrolaVstupu;
 import fri.wof.prostredie.IMiestnost;
 import fri.wof.prostredie.NeexistujuciVychodException;
 
+import java.io.Serializable;
 import java.util.HashMap;
 
 /**
@@ -13,7 +14,7 @@ import java.util.HashMap;
  *
  * @author janik
  */
-public class Hrac {
+public class Hrac implements Serializable {
     private IMiestnost aktualnaMiestnost;
     private final HashMap<String, IPredmet> inventar;
 

@@ -1,8 +1,11 @@
 package fri.wof.prikazy;
 
+import fri.wof.hra.Hra;
 import fri.wof.hra.Hrac;
 import fri.wof.prostredie.NeexistujuciVychodException;
 import fri.wof.hra.ZakazVstupuException;
+
+import java.io.*;
 
 /**
  * Trieda NazvyPrikazov udrzuje zoznam nazvov platnych prikazov hry. 
@@ -17,7 +20,8 @@ import fri.wof.hra.ZakazVstupuException;
 public class VykonavacPrikazov {
     // konstantne pole nazvov prikazov
     private static final String[] PLATNE_PRIKAZY = {
-        "chod", "ukonci", "pomoc", "zdvihni", "odhod", "pouzi", "oslov"
+        "chod", "ukonci", "pomoc", "zdvihni", "odhod", "pouzi", "oslov",
+        "save", "load"
     };
 
     /**
@@ -95,9 +99,10 @@ public class VykonavacPrikazov {
      *
      * @param prikaz prikaz, ktory ma byt vykonany.
      * @param hrac
+     * @param hra
      * @return true ak prikaz ukonci hru, inak vrati false.
      */
-    public boolean vykonajPrikaz(Prikaz prikaz, Hrac hrac) {
+    public boolean vykonajPrikaz(Prikaz prikaz, Hrac hrac, Hra hra) {
         if (prikaz.jeNeznamy()) {
             System.out.println("Nerozumiem, co mas na mysli...");
             return false;
@@ -126,8 +131,36 @@ public class VykonavacPrikazov {
             case "oslov":
                 this.oslovNpc(prikaz, hrac);
                 return false;
+            case "save":
+                this.saveStav(prikaz, hrac);
+                return false;
+            case "load":
+                this.loadStav(prikaz, hra);
+                return false;
             default:
                 return false;
+        }
+    }
+
+    private void loadStav(Prikaz prikaz, Hra hra) {
+        File saveSubor = new File(prikaz.getParameter() + ".save");
+
+        try (ObjectInputStream saveObjectStream = new ObjectInputStream(new FileInputStream(saveSubor))) {
+            hra.setHrac((Hrac)saveObjectStream.readObject());
+        } catch (IOException | ClassNotFoundException e) {
+            System.out.println("Asi mas chybny save");
+            e.printStackTrace();
+        }
+    }
+
+    private void saveStav(Prikaz prikaz, Hrac hrac) {
+        File saveSubor = new File(prikaz.getParameter() + ".save");
+
+        try (ObjectOutputStream saveObjectStream = new ObjectOutputStream(new FileOutputStream(saveSubor))) {
+            saveObjectStream.writeObject(hrac);
+        } catch (IOException e) {
+            System.out.println("Je mi to velmi luto, ale save subory pre nieco nefunguju! Musis pokracovat v hre.");
+            e.printStackTrace();
         }
     }
 
