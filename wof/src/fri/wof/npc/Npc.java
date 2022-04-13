@@ -1,8 +1,6 @@
 package fri.wof.npc;
 
-import java.io.Serializable;
-
-public class Npc implements Serializable {
+public class Npc {
     private final String meno;
 
     public Npc(String meno) {

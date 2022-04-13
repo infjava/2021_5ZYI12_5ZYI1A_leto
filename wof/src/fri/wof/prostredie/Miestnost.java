@@ -3,11 +3,10 @@ package fri.wof.prostredie;
 import fri.wof.npc.Npc;
 import fri.wof.predmety.IPredmet;
 
-import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Set;
 
-public class Miestnost implements IMiestnost, Serializable {
+public class Miestnost implements IMiestnost {
     private final String popisMiestnosti;
     private final HashMap<String, IPredmet> predmety;
     private final HashMap<String, Npc> npccka;
@@ -31,6 +30,11 @@ public class Miestnost implements IMiestnost, Serializable {
         this.vypisMozneVychody();
         this.vypisKluce("Predmety", this.predmety.keySet());
         this.vypisKluce("NPC", this.npccka.keySet());
+    }
+
+    @Override
+    public String getNazov() {
+        return this.popisMiestnosti.split(" - ")[0];
     }
 
     protected void vypisKluce(String nadpis, Set<String> kluce) {

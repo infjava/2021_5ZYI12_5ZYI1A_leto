@@ -18,6 +18,9 @@ import java.io.*;
  */
 
 public class VykonavacPrikazov {
+    private static final int SAVE_MAGIC_NUMBER = 1456156;
+    private static final int SAVE_VERZIA = 1;
+
     // konstantne pole nazvov prikazov
     private static final String[] PLATNE_PRIKAZY = {
         "chod", "ukonci", "pomoc", "zdvihni", "odhod", "pouzi", "oslov",
@@ -102,7 +105,7 @@ public class VykonavacPrikazov {
      * @param hra
      * @return true ak prikaz ukonci hru, inak vrati false.
      */
-    public boolean vykonajPrikaz(Prikaz prikaz, Hrac hrac, Hra hra) {
+    public boolean vykonajPrikaz(Prikaz prikaz, Hrac hrac) {
         if (prikaz.jeNeznamy()) {
             System.out.println("Nerozumiem, co mas na mysli...");
             return false;
@@ -135,19 +138,31 @@ public class VykonavacPrikazov {
                 this.saveStav(prikaz, hrac);
                 return false;
             case "load":
-                this.loadStav(prikaz, hra);
+                this.loadStav(prikaz, hrac);
                 return false;
             default:
                 return false;
         }
     }
 
-    private void loadStav(Prikaz prikaz, Hra hra) {
+    private void loadStav(Prikaz prikaz, Hrac hrac) {
         File saveSubor = new File(prikaz.getParameter() + ".save");
 
-        try (ObjectInputStream saveObjectStream = new ObjectInputStream(new FileInputStream(saveSubor))) {
-            hra.setHrac((Hrac)saveObjectStream.readObject());
-        } catch (IOException | ClassNotFoundException e) {
+        try (DataInputStream saveDataStream = new DataInputStream(new FileInputStream(saveSubor))) {
+            if (saveDataStream.readInt() != VykonavacPrikazov.SAVE_MAGIC_NUMBER) {
+                System.out.println("Asi mas chybny save");
+                return;
+            }
+
+            int saveVerzia = saveDataStream.readInt();
+            if (saveVerzia > VykonavacPrikazov.SAVE_VERZIA) {
+                System.out.println("Pokusas sa nacitat save vytvoreny v novsej verzii WOF");
+                return;
+            }
+
+            hrac.nacitajSa(saveDataStream, saveVerzia);
+
+        } catch (IOException e) {
             System.out.println("Asi mas chybny save");
             e.printStackTrace();
         }
@@ -156,8 +171,11 @@ public class VykonavacPrikazov {
     private void saveStav(Prikaz prikaz, Hrac hrac) {
         File saveSubor = new File(prikaz.getParameter() + ".save");
 
-        try (ObjectOutputStream saveObjectStream = new ObjectOutputStream(new FileOutputStream(saveSubor))) {
-            saveObjectStream.writeObject(hrac);
+        try (DataOutputStream saveDataStream = new DataOutputStream(new FileOutputStream(saveSubor))) {
+            saveDataStream.writeInt(VykonavacPrikazov.SAVE_MAGIC_NUMBER);
+            saveDataStream.writeInt(VykonavacPrikazov.SAVE_VERZIA);
+
+            hrac.ulozSa(saveDataStream);
         } catch (IOException e) {
             System.out.println("Je mi to velmi luto, ale save subory pre nieco nefunguju! Musis pokracovat v hre.");
             e.printStackTrace();

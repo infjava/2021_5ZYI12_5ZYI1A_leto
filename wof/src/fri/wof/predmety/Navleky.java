@@ -2,9 +2,7 @@ package fri.wof.predmety;
 
 import fri.wof.hra.Hrac;
 
-import java.io.Serializable;
-
-public class Navleky implements IPredmet, Serializable {
+public class Navleky implements IPredmet {
     private boolean obute;
 
     public Navleky() {

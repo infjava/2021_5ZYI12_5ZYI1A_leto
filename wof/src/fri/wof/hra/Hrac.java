@@ -6,7 +6,9 @@ import fri.wof.prostredie.IKontrolaVstupu;
 import fri.wof.prostredie.IMiestnost;
 import fri.wof.prostredie.NeexistujuciVychodException;
 
-import java.io.Serializable;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
 import java.util.HashMap;
 
 /**
@@ -14,7 +16,7 @@ import java.util.HashMap;
  *
  * @author janik
  */
-public class Hrac implements Serializable {
+public class Hrac {
     private IMiestnost aktualnaMiestnost;
     private final HashMap<String, IPredmet> inventar;
 
@@ -76,5 +78,14 @@ public class Hrac implements Serializable {
         } else {
             System.out.printf("Npc %s nikde nevidis!%n", meno);
         }
+    }
+
+    public void ulozSa(DataOutputStream saveDataStream) throws IOException {
+        saveDataStream.writeUTF(this.aktualnaMiestnost.getNazov());
+    }
+
+    public void nacitajSa(DataInputStream saveDataStream, int saveVerzia) throws IOException {
+        String miestnost = saveDataStream.readUTF();
+        // tu by bolo vyhladanie miestnosti v mape na zaklade nazvu
     }
 }

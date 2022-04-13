@@ -3,9 +3,7 @@ package fri.wof.predmety;
 import fri.wof.hra.Hrac;
 import fri.wof.prostredie.Vytah;
 
-import java.io.Serializable;
-
-public class OvladacVytahu implements IPredmet, Serializable {
+public class OvladacVytahu implements IPredmet {
     @Override
     public String getNazov() {
         return "ovladac";

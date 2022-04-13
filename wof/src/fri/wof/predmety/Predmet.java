@@ -2,9 +2,7 @@ package fri.wof.predmety;
 
 import fri.wof.hra.Hrac;
 
-import java.io.Serializable;
-
-public class Predmet implements IPredmet, Serializable {
+public class Predmet implements IPredmet {
     private final String nazov;
 
     public Predmet(String nazov) {
