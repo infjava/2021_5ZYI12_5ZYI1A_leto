@@ -10,6 +10,7 @@ StandardnaMiestnost internaty
         - PortalGun
     Npc:
         - spoluziak
+    Start
 
 StandardnaMiestnost cesta
     hej hou, hej hou, uz ideme ... na fri
