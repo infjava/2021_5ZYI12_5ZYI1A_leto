@@ -1,0 +1,103 @@
+StandardnaMiestnost internaty
+    tu som doma
+    Vychody:
+        - cesta
+    Predmety:
+        - Predmet pero
+        - Predmet usbkluc
+        - Predmet kluc
+        - Navleky
+        - PortalGun
+    Npc:
+        - spoluziak
+
+StandardnaMiestnost cesta
+    hej hou, hej hou, uz ideme ... na fri
+    Vychody:
+        - internaty
+        - telocvicna
+        - c
+        - schody
+
+StandardnaMiestnost telocvicna
+    divno to tu pachne, niekto sa zabudol osprchovat
+    Vychody:
+        - cesta
+
+StandardnaMiestnost schody
+    uz sa tesim do skoly
+    Vychody:
+        - cesta
+        - chodba
+
+StandardnaMiestnost chodba
+    vstupna chodba
+    Vychody:
+        - schody
+        - vratnica
+        - a
+        - b
+
+StandardnaMiestnost vratnica
+    tu byva pani vratnicka
+    Vychody:
+        - chodba
+
+StandardnaMiestnost b
+    temna chodba v budove b
+    Vychody:
+        - b2
+        - chodba
+        - vytah
+
+Labak b2
+    miestnost plna pocitacov
+    Vychody:
+        - b
+
+StandardnaMiestnost a
+    chodba plna historickych artefaktov
+    Vychody:
+        - chodba
+        - a2
+        - wc
+        - c
+
+StandardnaMiestnost c
+    chodba v podzemi
+    Vychody:
+        - a
+        - cesta
+
+StandardnaMiestnost a2
+    kniznica, tu treba byt ticho
+    Vychody:
+        - a
+
+StandardnaMiestnost wc
+    radsej ani nejdem hovorit, co tu vidim
+    Vychody:
+        - a
+
+Vytah vytah
+    vytah zo socialistickej ery, poriadne sa drz
+    Poschodia:
+        - b
+        - poschodie1
+        - poschodie2
+        - poschodie3
+
+StandardnaMiestnost poschodie1
+    prve poschodie
+    Vychody:
+        - vytah
+
+StandardnaMiestnost poschodie2
+    druhe poschodie
+    Vychody:
+        - vytah
+
+StandardnaMiestnost poschodie3
+    tretie poschodie
+    Vychody:
+        - vytah
