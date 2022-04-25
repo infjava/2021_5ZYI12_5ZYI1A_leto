@@ -1,7 +1,10 @@
 package fri.zoo;
 
-public abstract class Zviera {
+/**
+ * @param <T> Typ zvierata (tj. potomka)
+ */
+public abstract class Zviera<T> {
     public abstract String getMeno();
 
-    public abstract void zjedz(IPotrava potrava);
+    public abstract void zjedz(IPotrava<T> potrava);
 }

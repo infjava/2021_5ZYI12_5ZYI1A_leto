@@ -1,6 +1,6 @@
 package fri.zoo;
 
-public class Mys extends Zviera implements IPotrava {
+public class Mys extends Zviera<Mys> implements IPotrava<Lev> {
     @Override
     public String toString() {
         return "mys";
@@ -12,7 +12,7 @@ public class Mys extends Zviera implements IPotrava {
     }
 
     @Override
-    public void zjedz(IPotrava potrava) {
+    public void zjedz(IPotrava<Mys> potrava) {
         System.out.println("Mickey zhryzkal syr");
     }
 }

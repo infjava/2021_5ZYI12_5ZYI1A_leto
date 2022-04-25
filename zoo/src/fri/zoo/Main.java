@@ -7,10 +7,12 @@ public class Main {
         Klietka<Lev> klietkaNaLeva = new Klietka<Lev>();
         klietkaNaLeva.vlozZviera(lev);
         klietkaNaLeva.nakrm(new Mys());
+        //klietkaNaLeva.nakrm(new Syr());
         klietkaNaLeva.kukni();
         Klietka<Mys> klietkaNaMys = new Klietka<Mys>();
         klietkaNaMys.vlozZviera(new Mys());
         klietkaNaMys.nakrm(new Syr());
+        //klietkaNaMys.nakrm(new Mys());
         klietkaNaMys.kukni();
         System.out.println(klietkaNaMys.getMenoZvierata());
 //        Klietka<Integer> klietkaNaCisla = new Klietka<Integer>();

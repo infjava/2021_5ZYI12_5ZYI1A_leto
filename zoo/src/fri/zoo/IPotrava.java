@@ -1,4 +1,7 @@
 package fri.zoo;
 
-public interface IPotrava {
+/**
+ * @param <T> Zviera, pre ktore je potrava urcena
+ */
+public interface IPotrava<T> {
 }

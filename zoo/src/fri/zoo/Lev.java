@@ -1,6 +1,6 @@
 package fri.zoo;
 
-public class Lev extends Zviera {
+public class Lev extends Zviera<Lev> {
     private final String meno;
 
     public Lev(String meno) {
@@ -13,7 +13,7 @@ public class Lev extends Zviera {
     }
 
     @Override
-    public void zjedz(IPotrava potrava) {
+    public void zjedz(IPotrava<Lev> potrava) {
         System.out.println("Lev z hlasitym zarevanim zozram mys");
     }
 
