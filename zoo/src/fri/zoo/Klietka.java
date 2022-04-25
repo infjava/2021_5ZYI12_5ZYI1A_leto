@@ -1,9 +1,9 @@
 package fri.zoo;
 
-public class Klietka {
-    private Zviera zviera;
+public class Klietka<E> {
+    private E zviera;
 
-    public void vlozZviera(Zviera zviera) {
+    public void vlozZviera(E zviera) {
         this.zviera = zviera;
     }
 

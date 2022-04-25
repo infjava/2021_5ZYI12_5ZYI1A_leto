@@ -3,11 +3,11 @@ package fri.zoo;
 public class Main {
 
     public static void main(String[] args) {
-	    Zviera zviera = new Lev("Alex");
-        Klietka klietkaNaLeva = new Klietka();
-        klietkaNaLeva.vlozZviera(zviera);
+	    Lev lev = new Lev("Alex");
+        Klietka<Lev> klietkaNaLeva = new Klietka<Lev>();
+        klietkaNaLeva.vlozZviera(lev);
         klietkaNaLeva.kukni();
-        Klietka klietkaNaMys = new Klietka();
+        Klietka<Mys> klietkaNaMys = new Klietka<Mys>();
         klietkaNaMys.vlozZviera(new Mys());
         klietkaNaMys.kukni();
     }
