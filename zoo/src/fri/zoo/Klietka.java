@@ -1,13 +1,13 @@
 package fri.zoo;
 
 public class Klietka {
-    private Lev lev;
+    private Zviera zviera;
 
-    public void vlozZviera(Lev lev) {
-        this.lev = lev;
+    public void vlozZviera(Zviera zviera) {
+        this.zviera = zviera;
     }
 
     public void kukni() {
-        System.out.printf("V klietke si nasiel zviera: %s%n", this.lev);
+        System.out.printf("V klietke si nasiel zviera: %s%n", this.zviera);
     }
 }
