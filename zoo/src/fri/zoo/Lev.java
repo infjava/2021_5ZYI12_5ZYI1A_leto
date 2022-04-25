@@ -13,6 +13,11 @@ public class Lev extends Zviera {
     }
 
     @Override
+    public void zjedz(IPotrava potrava) {
+        System.out.println("Lev z hlasitym zarevanim zozram mys");
+    }
+
+    @Override
     public String toString() {
         return "lev " + this.meno;
     }

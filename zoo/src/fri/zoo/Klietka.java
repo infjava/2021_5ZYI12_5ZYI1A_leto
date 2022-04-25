@@ -1,6 +1,6 @@
 package fri.zoo;
 
-public class Klietka<E> {
+public class Klietka<E extends Zviera> {
     private E zviera;
 
     public void vlozZviera(E zviera) {
@@ -12,6 +12,10 @@ public class Klietka<E> {
     }
 
     public String getMenoZvierata() {
-        return ((Zviera)this.zviera).getMeno();
+        return this.zviera.getMeno();
+    }
+
+    public void nakrm(IPotrava potrava) {
+        this.zviera.zjedz(potrava);
     }
 }
