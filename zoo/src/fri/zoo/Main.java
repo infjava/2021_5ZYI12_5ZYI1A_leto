@@ -32,5 +32,10 @@ public class Main {
         klietkaNaMys.nakrm(potrava);
         //klietkaNaMys.nakrm(new Mys());
         klietkaNaMys.kukni();
+
+        System.out.println("V klietke sa nachadzaju:");
+        for (T prvok : klietkaNaMys) {
+            System.out.println(prvok);
+        }
     }
 }

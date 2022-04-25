@@ -1,6 +1,8 @@
 package fri.zoo;
 
-public class Klietka<E extends Zviera<E>> {
+import java.util.Iterator;
+
+public class Klietka<E extends Zviera<E>> implements Iterable<E> {
     private E zviera;
 
     public void vlozZviera(E zviera) {
@@ -17,5 +19,10 @@ public class Klietka<E extends Zviera<E>> {
 
     public void nakrm(IPotrava<E> potrava) {
         this.zviera.zjedz(potrava);
+    }
+
+    @Override
+    public Iterator<E> iterator() {
+        return new KlietkaIterator<E>(this.zviera);
     }
 }
