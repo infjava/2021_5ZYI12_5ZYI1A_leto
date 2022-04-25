@@ -4,20 +4,19 @@ public class Main {
 
     public static void main(String[] args) {
 	    Lev lev = new Lev("Alex");
-        Klietka<Lev> klietkaNaLeva = new Klietka<Lev>();
-        klietkaNaLeva.vlozZviera(lev);
-        klietkaNaLeva.nakrm(new Mys());
-        //klietkaNaLeva.nakrm(new Syr());
-        klietkaNaLeva.kukni();
-        Klietka<Mys> klietkaNaMys = new Klietka<Mys>();
-        klietkaNaMys.vlozZviera(new Mys());
-        klietkaNaMys.nakrm(new Syr());
+        Main.<Lev, Mys>vyskusajKlietku(lev, new Mys());
+        Main.<Mys, Syr>vyskusajKlietku(new Mys(), new Syr());
+    }
+
+    /**
+     * @param <T> Typ zvierata
+     * @param <S> Typ potravy
+     */
+    public static <T extends Zviera<T>, S extends IPotrava<T>> void vyskusajKlietku(T zviera, S potrava) {
+        Klietka<T> klietkaNaMys = new Klietka<T>();
+        klietkaNaMys.vlozZviera(zviera);
+        klietkaNaMys.nakrm(potrava);
         //klietkaNaMys.nakrm(new Mys());
         klietkaNaMys.kukni();
-        System.out.println(klietkaNaMys.getMenoZvierata());
-//        Klietka<Integer> klietkaNaCisla = new Klietka<Integer>();
-//        klietkaNaCisla.vlozZviera(5);
-//        klietkaNaCisla.kukni();
-//        System.out.println(klietkaNaCisla.getMenoZvierata());
     }
 }
