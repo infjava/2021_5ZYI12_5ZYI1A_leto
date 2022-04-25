@@ -10,6 +10,10 @@ public class Main {
         Main.vyskusajKlietku(lev, new Mys());
         Main.vyskusajKlietku(new Mys(), new Syr());
         Main.vyskusajForEach();
+
+//        for (Integer nieco : new NekonecnyKontajner()) {
+//            System.out.println(nieco);
+//        }
     }
 
     private static void vyskusajForEach() {
