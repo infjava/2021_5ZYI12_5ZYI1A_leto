@@ -1,11 +1,25 @@
 package fri.zoo;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
 public class Main {
 
     public static void main(String[] args) {
 	    Lev lev = new Lev("Alex");
         Main.vyskusajKlietku(lev, new Mys());
         Main.vyskusajKlietku(new Mys(), new Syr());
+        Main.vyskusajForEach();
+    }
+
+    private static void vyskusajForEach() {
+        ArrayList<Integer> cisla = new ArrayList<>();
+
+        Iterator<Integer> iterator = cisla.iterator();
+        while (iterator.hasNext()) {
+            Integer integer = iterator.next();
+            System.out.println(integer);
+        }
     }
 
     /**
