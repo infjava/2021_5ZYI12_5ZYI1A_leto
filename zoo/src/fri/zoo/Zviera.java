@@ -1,4 +1,5 @@
 package fri.zoo;
 
-public class Zviera {
+public abstract class Zviera {
+    public abstract String getMeno();
 }

@@ -8,6 +8,11 @@ public class Lev extends Zviera {
     }
 
     @Override
+    public String getMeno() {
+        return this.meno;
+    }
+
+    @Override
     public String toString() {
         return "lev " + this.meno;
     }

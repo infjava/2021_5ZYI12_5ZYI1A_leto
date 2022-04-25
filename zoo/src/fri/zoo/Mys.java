@@ -5,4 +5,9 @@ public class Mys extends Zviera {
     public String toString() {
         return "mys";
     }
+
+    @Override
+    public String getMeno() {
+        return "Mickey";
+    }
 }

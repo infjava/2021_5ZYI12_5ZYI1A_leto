@@ -10,4 +10,8 @@ public class Klietka<E> {
     public void kukni() {
         System.out.printf("V klietke si nasiel zviera: %s%n", this.zviera);
     }
+
+    public String getMenoZvierata() {
+        return ((Zviera)this.zviera).getMeno();
+    }
 }

@@ -10,5 +10,6 @@ public class Main {
         Klietka<Mys> klietkaNaMys = new Klietka<Mys>();
         klietkaNaMys.vlozZviera(new Mys());
         klietkaNaMys.kukni();
+        System.out.println(klietkaNaMys.getMenoZvierata());
     }
 }
