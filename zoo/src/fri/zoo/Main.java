@@ -4,8 +4,8 @@ public class Main {
 
     public static void main(String[] args) {
 	    Lev lev = new Lev("Alex");
-        Main.<Lev, Mys>vyskusajKlietku(lev, new Mys());
-        Main.<Mys, Syr>vyskusajKlietku(new Mys(), new Syr());
+        Main.vyskusajKlietku(lev, new Mys());
+        Main.vyskusajKlietku(new Mys(), new Syr());
     }
 
     /**
