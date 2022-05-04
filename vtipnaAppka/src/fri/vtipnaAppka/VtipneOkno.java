@@ -12,7 +12,11 @@ public class VtipneOkno {
         this.okno.add(new JLabel("Chces ukoncit uspesne predmet informatika?"), BorderLayout.NORTH);
         JPanel tlacidla = new JPanel();
         tlacidla.setLayout(new GridLayout());
-        tlacidla.add(new JButton("Ano"));
+
+        JButton anoTlacitko = new JButton("Ano");
+        anoTlacitko.addActionListener(new KliknutieNaAno());
+        tlacidla.add(anoTlacitko);
+
         tlacidla.add(new JButton("Nie"));
         this.okno.add(tlacidla);
         this.okno.pack();
