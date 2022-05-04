@@ -11,6 +11,14 @@ public class Main {
         Main.vyskusajKlietku(new Mys(), new Syr());
         Main.vyskusajForEach();
 
+        for (Integer cislo : new ZoznamPrvocisel(100)) {
+            System.out.println(cislo);
+        }
+
+        for (Trieda instancia : new CitacBinarnehoSuboru<Trieda>("nazovSuboru.bin")) {
+
+        }
+
 //        for (Integer nieco : new NekonecnyKontajner()) {
 //            System.out.println(nieco);
 //        }
