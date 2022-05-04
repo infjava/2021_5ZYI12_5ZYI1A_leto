@@ -2,8 +2,6 @@ package fri.vtipnaAppka;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class VtipneOkno {
     private final JFrame okno;
@@ -16,12 +14,9 @@ public class VtipneOkno {
         tlacidla.setLayout(new GridLayout());
 
         JButton anoTlacitko = new JButton("Ano");
-        anoTlacitko.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "Tak by si sa mal zacat snazit");
-                System.exit(0);
-            }
+        anoTlacitko.addActionListener(e -> {
+            JOptionPane.showMessageDialog(null, "Tak by si sa mal zacat snazit");
+            System.exit(0);
         });
         tlacidla.add(anoTlacitko);
 
