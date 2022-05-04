@@ -10,8 +10,11 @@ public class VtipneOkno {
         this.okno = new JFrame("Vtipna aplikacia");
         this.okno.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.okno.add(new JLabel("Chces ukoncit uspesne predmet informatika?"), BorderLayout.NORTH);
-        this.okno.add(new JButton("Ano"), BorderLayout.WEST);
-        this.okno.add(new JButton("Nie"), BorderLayout.EAST);
+        JPanel tlacidla = new JPanel();
+        tlacidla.setLayout(new GridLayout());
+        tlacidla.add(new JButton("Ano"));
+        tlacidla.add(new JButton("Nie"));
+        this.okno.add(tlacidla);
         this.okno.pack();
     }
 
