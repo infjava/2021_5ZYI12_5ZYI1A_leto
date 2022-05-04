@@ -2,12 +2,14 @@ package fri.vtipnaAppka;
 
 import javax.swing.*;
 
-public class VtipneOkno extends JFrame {
+public class VtipneOkno {
+    private final JFrame okno;
+
     public VtipneOkno() {
-        super("Vtipna aplikacia");
+        this.okno = new JFrame("Vtipna aplikacia");
     }
 
     public void zobraz() {
-        this.setVisible(true);
+        this.okno.setVisible(true);
     }
 }
