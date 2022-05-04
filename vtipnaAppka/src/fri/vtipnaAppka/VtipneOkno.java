@@ -7,6 +7,8 @@ public class VtipneOkno {
 
     public VtipneOkno() {
         this.okno = new JFrame("Vtipna aplikacia");
+        this.okno.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        this.okno.pack();
     }
 
     public void zobraz() {
