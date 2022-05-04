@@ -2,8 +2,18 @@ package fri.vtipnaAppka;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class VtipneOkno {
+    private static class KliknutieNaAno implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            JOptionPane.showMessageDialog(null, "Tak by si sa mal zacat snazit");
+            System.exit(0);
+        }
+    }
+
     private final JFrame okno;
 
     public VtipneOkno() {
