@@ -38,6 +38,7 @@ public class VtipneOkno {
         anoTlacitko.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
+                anoTlacitko.grabFocus();
                 anoTlacitko.setText("Ano");
                 nieTlacitko.setText("Nie");
             }
