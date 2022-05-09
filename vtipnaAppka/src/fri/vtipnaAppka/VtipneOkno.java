@@ -2,18 +2,21 @@ package fri.vtipnaAppka;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.FocusAdapter;
-import java.awt.event.FocusEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.*;
 
 public class VtipneOkno {
     private final JFrame okno;
 
     public VtipneOkno() {
         this.okno = new JFrame("Vtipna aplikacia");
-        this.okno.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        this.okno.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
         this.okno.add(new JLabel("Chces ukoncit uspesne predmet informatika?"), BorderLayout.NORTH);
+        this.okno.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                JOptionPane.showMessageDialog(null, "Si fakt myslis, ze som taky blby? Musis sa viac snazit.");
+            }
+        });
         JPanel tlacidla = new JPanel();
         tlacidla.setLayout(new GridLayout());
 
