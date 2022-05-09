@@ -2,6 +2,8 @@ package fri.vtipnaAppka;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -36,6 +38,13 @@ public class VtipneOkno {
         anoTlacitko.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
+                anoTlacitko.setText("Ano");
+                nieTlacitko.setText("Nie");
+            }
+        });
+        anoTlacitko.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
                 anoTlacitko.setText("Ano");
                 nieTlacitko.setText("Nie");
             }
