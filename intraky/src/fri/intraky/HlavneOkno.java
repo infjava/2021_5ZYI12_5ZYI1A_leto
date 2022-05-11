@@ -24,6 +24,7 @@ public class HlavneOkno {
     public void zobraz() {
         this.list1.setModel(this.zoznamStudentov);
         JFrame okno = new JFrame("Intraky IS");
+        okno.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         okno.add(this.panel1);
         okno.pack();
         okno.setVisible(true);
