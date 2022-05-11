@@ -65,6 +65,8 @@ public class HlavneOkno {
         this.menoTextField.setText("");
         this.priezviskoTextField.setText("");
         this.izbaTextField.setText("");
+
+        this.menoTextField.grabFocus();
     }
 
     public void zobraz() {
@@ -72,6 +74,7 @@ public class HlavneOkno {
         JFrame okno = new JFrame("Intraky IS");
         okno.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         okno.add(this.obsahOkna);
+        okno.getRootPane().setDefaultButton(this.pridajButton);
         okno.pack();
         okno.setVisible(true);
     }
