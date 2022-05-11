@@ -61,6 +61,10 @@ public class HlavneOkno {
                 this.izbaTextField.getText()
             )
         );
+
+        this.menoTextField.setText("");
+        this.priezviskoTextField.setText("");
+        this.izbaTextField.setText("");
     }
 
     public void zobraz() {
