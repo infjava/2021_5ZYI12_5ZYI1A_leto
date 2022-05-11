@@ -3,6 +3,8 @@ package fri.intraky;
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -45,12 +47,15 @@ public class HlavneOkno {
         this.izbaTextField.getDocument().addDocumentListener(reakciaNaZmenu);
 
         this.aktualizujOpravnenia();
+        zoznamStudentovList.addListSelectionListener(e -> this.aktualizujOpravnenia());
+        odstranButton.addActionListener(e -> this.odstranStudentov());
     }
 
     private void aktualizujOpravnenia() {
         this.pridajButton.setEnabled(!this.menoTextField.getText().isEmpty()
                 && !this.priezviskoTextField.getText().isEmpty()
                 && !this.izbaTextField.getText().isEmpty());
+        this.odstranButton.setEnabled(!this.zoznamStudentovList.isSelectionEmpty());
     }
 
     private void pridajStudenta() {
@@ -67,6 +72,12 @@ public class HlavneOkno {
         this.izbaTextField.setText("");
 
         this.menoTextField.grabFocus();
+    }
+
+    private void odstranStudentov() {
+        for (UbytovanyStudent student : this.zoznamStudentovList.getSelectedValuesList()) {
+            this.zoznamStudentov.removeElement(student);
+        }
     }
 
     public void zobraz() {
