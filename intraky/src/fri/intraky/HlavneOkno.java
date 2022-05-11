@@ -4,11 +4,11 @@ import javax.swing.*;
 
 public class HlavneOkno {
     private final DefaultListModel<UbytovanyStudent> zoznamStudentov;
-    private JList<UbytovanyStudent> list1;
-    private JPanel panel1;
-    private JTextField meno;
-    private JTextField priezvisko;
-    private JTextField izba;
+    private JList<UbytovanyStudent> zoznamStudentovList;
+    private JPanel obsahOkna;
+    private JTextField menoTextField;
+    private JTextField priezviskoTextField;
+    private JTextField izbaTextField;
     private JButton pridajButton;
     private JButton odstranButton;
     private JButton vyhladajButton;
@@ -22,10 +22,10 @@ public class HlavneOkno {
     }
 
     public void zobraz() {
-        this.list1.setModel(this.zoznamStudentov);
+        this.zoznamStudentovList.setModel(this.zoznamStudentov);
         JFrame okno = new JFrame("Intraky IS");
         okno.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        okno.add(this.panel1);
+        okno.add(this.obsahOkna);
         okno.pack();
         okno.setVisible(true);
     }
