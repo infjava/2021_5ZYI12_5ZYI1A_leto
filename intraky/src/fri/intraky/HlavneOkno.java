@@ -1,6 +1,8 @@
 package fri.intraky;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class HlavneOkno {
     private final DefaultListModel<UbytovanyStudent> zoznamStudentov;
@@ -16,9 +18,18 @@ public class HlavneOkno {
 
     public HlavneOkno() {
         this.zoznamStudentov = new DefaultListModel<UbytovanyStudent>();
-        this.zoznamStudentov.addElement(new UbytovanyStudent("Jozko", "Mrkvicka", "C123"));
-        this.zoznamStudentov.addElement(new UbytovanyStudent("Ferko", "Mrkvicka", "C123"));
-        this.zoznamStudentov.addElement(new UbytovanyStudent("Arnold", "Neviemaky", "F100"));
+
+        pridajButton.addActionListener(e -> this.pridajStudenta());
+    }
+
+    private void pridajStudenta() {
+        this.zoznamStudentov.addElement(
+            new UbytovanyStudent(
+                this.menoTextField.getText(),
+                this.priezviskoTextField.getText(),
+                this.izbaTextField.getText()
+            )
+        );
     }
 
     public void zobraz() {
